@@ -2,6 +2,7 @@
   "name": "mandatory-i-aleksandergreg",
   "version": "1.0.0",
   "description": "Exercise covering all we have worked with so far in Node.js",
+  "type": "module",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

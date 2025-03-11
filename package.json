@@ -1,0 +1,32 @@
+{
+  "name": "mandatory-i-aleksandergreg",
+  "version": "1.0.0",
+  "description": "Exercise covering all we have worked with so far in Node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KeaAndl/mandatory-i-Aleksandergreg.git"
+  },
+  "keywords": [
+    "Node.js",
+    "Express.js",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "Tailwind",
+    "NPM",
+    "Git"
+  ],
+  "author": "Aleksander Gregersen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KeaAndl/mandatory-i-Aleksandergreg/issues"
+  },
+  "homepage": "https://github.com/KeaAndl/mandatory-i-Aleksandergreg#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

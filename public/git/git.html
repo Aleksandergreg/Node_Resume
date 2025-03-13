@@ -11,57 +11,101 @@
 <body class="bg-gray-100">
   <div class="min-h-screen flex">
     <div id="sidebar-container"></div>
-    <main class="flex-1 p-8 max-w-4xl mx-auto">
-      <h1 class="text-3xl font-bold mb-6">Git</h1>
 
-      <p class="mb-4">
-        Git is a version control system that, cut down to the bone,  helps us as developers to keep track of the changes we made to our code over time. Imagine it like this, you want to make a change to your project, but you are afraid it will make your project break, so you save your project as Project_v1, so you are sure you have a working version. Then you implement your new feature, so now you save your project as Project_v2. This would solve the issue, but it quickly gets messy, think of you having projects called Project_final and Project_final_final and so on.
-      </p>
+    <main class="flex-1 max-w-4xl mx-auto py-8 px-4 md:px-8">
+      <div class="bg-white shadow-lg rounded-md p-6 md:p-10">
+        <h1 class="text-3xl font-bold mb-6 text-blue-800">Git</h1>
 
-      <p class="mb-4">
-        It also allows us to collaborate and share our code with group members, and other people who would be interested in our code. Because of the version control it also allows us to play around with new features, without having to be afraid of breaking our application, as we can make roll back to earlier commits in the projects, create branches, so we don’t break the code that exists on either our development or production branch.
-      </p>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Git is a version control system that, cut down to the bone, helps us as developers to keep track of the changes we made to our code over time. Imagine it like this, you want to make a change to your project, but you are afraid it will make your project break, so you save your project as Project_v1, so you are sure you have a working version. Then you implement your new feature, so now you save your project as Project_v2. This would solve the issue, but it quickly gets messy, think of you having projects called Project_final and Project_final_final and so on.
+        </p>
 
-      <p class="mb-4">
-        The most important Git commands to be able to work with Git on GitHub or any other cloud-based platform for version control and collaboration, using any kind of terminal:
-      </p>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          It also allows us to collaborate and share our code with group members, and other people who would be interested in our code. Because of the version control it also allows us to play around with new features, without having to be afraid of breaking our application, as we can make roll back to earlier commits in the projects, create branches, so we don’t break the code that exists on either our development or production branch.
+        </p>
 
-      <p class="font-semibold mb-2">Cloning a repository:</p>
-      <pre class="bg-gray-800 text-white p-4 rounded mb-4"><code class="language-git">git clone &lt;url-to-the-repository-you-would-like-to-work-or-collaborate-on&gt;</code></pre>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          The most important Git commands to be able to work with Git on GitHub or any other cloud-based platform for version control and collaboration, using any kind of terminal:
+        </p>
 
-      <p class="font-semibold mb-2">Initialise Git(if your project is not already a Git repository, not needed if you have cloned):</p>
-      <pre class="bg-gray-800 text-white p-4 rounded mb-4"><code class="language-git">git init</code></pre>
+        <h2 class="text-xl font-semibold mb-2 text-gray-800">Cloning a repository:</h2>
+        <pre class="bg-gray-800 text-white p-4 rounded mb-6 border-l-4 border-blue-500">
+<code class="language-git">git clone &lt;url-to-the-repository-you-would-like-to-work-or-collaborate-on&gt;</code>
+        </pre>
 
-      <p class="font-semibold mb-2">Stage the changes:</p>
-      <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre"><code class="language-git">git add .
+        <h2 class="text-xl font-semibold mb-2 text-gray-800">
+          Initialise Git (if your project is not already a Git repository, not needed if you have cloned):
+        </h2>
+        <pre class="bg-gray-800 text-white p-4 rounded mb-6 border-l-4 border-blue-500">
+<code class="language-git">git init</code>
+        </pre>
 
-git add -A</code></pre>
+        <h2 class="text-xl font-semibold mb-2 text-gray-800">Stage the changes:</h2>
+        <pre class="bg-gray-800 text-white p-4 rounded mb-6 border-l-4 border-blue-500 whitespace-pre">
+<code class="language-git">git add .
 
-      <p class="mb-4">
-        git add . will stage all your new and modified files, but does not stage deletions, in your current directory, e.g what directory you have cd’ed in in your project.
-      </p>
+git add -A</code>
+        </pre>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          <strong>git add .</strong> will stage all your new and modified files, but does not stage deletions, in your current directory (i.e., the directory you have <em>cd</em>’ed into).
+        </p>
+        <p class="text-gray-700 leading-relaxed mb-8">
+          <strong>git add -A</strong> will stage all the changes you have made to your project, including deletions, no matter which path you are on in your project.
+        </p>
 
-      <p class="mb-4">
-        git add -A will stage all the changes you have made to your project, including deletions, no matter which path you are on in your project.
-      </p>
+        <h2 class="text-xl font-semibold mb-2 text-gray-800">Create a snapshot of your changes:</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          With the <strong>git add</strong> command, we have actually not saved the changes anywhere—we have just told Git that it is these changes that we would like to continue with. To create a snapshot of your changes, use this command:
+        </p>
+        <pre class="bg-gray-800 text-white p-4 rounded mb-6 border-l-4 border-blue-500">
+<code class="language-git">git commit -m "a good commit message here"</code>
+        </pre>
+        <p class="text-gray-700 leading-relaxed mb-8">
+          Making good commit messages is really important, but can also be a little tricky. You do not want to write 1500 words here—about everything you changed in great detail (that should be added as documentation if necessary). But also, you don’t want to create commit messages that simply say “fixed stuff.” Think about doing it in keywords that briefly describe what you have implemented or changed, in this manner “[Type], Short description (Optional File or module name)”, for example, “fix: resolve null pointer in bookingController”. It is also important to stage and commit changes each time you make a meaningful change, so a single commit does not encompass hundreds of lines of unrelated code. By following this practice, it’s easier to find specific changes later without sifting through unnecessary details.
+        </p>
 
-      <p class="font-semibold mb-2">Create a snapshot of your changes:</p>
-      <p class="mb-4">
-        With the git add command, we have actually not saved the changes anywhere, we have just told Git that it is these changes that we would like to continue with. To create a snapshot of your changes use this command:
-      </p>
-      <pre class="bg-gray-800 text-white p-4 rounded mb-4"><code class="language-git">git commit -m "a good commit message here"</code></pre>
+        <h2 class="text-xl font-semibold mb-2 text-gray-800">Connecting to a GitHub repository:</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          With the <strong>git add</strong> and <strong>git commit</strong> commands, we have now saved our changes to our local git history. Next, we’d like to push these changes to a remote repository for an overall better view and to collaborate with others. (This step is not necessary if you used <strong>git clone</strong>, as your local repository is already linked.)
+        </p>
+        <pre class="bg-gray-800 text-white p-4 rounded mb-6 border-l-4 border-blue-500">
+<code class="language-git">git remote add origin https://github.com/your-username/your-repository.git</code>
+        </pre>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          If you want to check the remote URL—and not just assume it’s linked—use:
+        </p>
+        <pre class="bg-gray-800 text-white p-4 rounded mb-6 border-l-4 border-blue-500">
+<code class="language-git">git remote -v</code>
+        </pre>
 
-      <p class="font-semibold mb-2">Connecting to a GitHub repository:</p>
-      <p class="mb-4">
-        With the git add and git commit command, we have now saved our changes to our local git history. Now we would like to push it to a remote repository, for a better overview and being able to collaborate with others. This is not needed if you have used the git clone command, as your local repository is already linked to the remote repository. This is done by the following command:
-      </p>
-      <pre class="bg-gray-800 text-white p-4 rounded mb-4"><code class="language-git">git remote add origin https://github.com/your-username/your-repository.git</code></pre>
+        <h2 class="text-xl font-semibold mb-2 text-gray-800">Pushing the changes to GitHub:</h2>
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 border-l-4 border-blue-500">
+<code class="language-git">git push -u origin main</code>
+        </pre>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          This tells Git to push to your upstream branch called <strong>main</strong> and set this as your default upstream branch. You can push to any branch by changing “main” to a different branch name, and of course adhering to your chosen branching strategy. Once you have done this, future pushes can be done with:
+        </p>
+        <pre class="bg-gray-800 text-white p-4 rounded mb-8 border-l-4 border-blue-500">
+<code class="language-git">git push</code>
+        </pre>
 
-      <p class="font-semibold mb-2">Pushing the changes to GitHub:</p>
-      <pre class="bg-gray-800 text-white p-4 rounded mb-4"><code class="language-git">git push -u origin main</code></pre>
+        <h2 class="text-xl font-semibold mb-2 text-gray-800">Pulling changes from GitHub:</h2>
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 border-l-4 border-blue-500">
+<code class="language-git">git pull</code>
+        </pre>
+        <p class="text-gray-700 leading-relaxed mb-8">
+          As Git and GitHub are used for collaboration, the current structure of your project might have been changed by someone else. Before you start working on your own tasks, it's a good idea to first pull the latest changes down locally.
+        </p>
 
-      <p class="font-semibold mb-2">Pulling changes from GitHub:</p>
-      <pre class="bg-gray-800 text-white p-4 rounded mb-4"><code class="language-git">git pull</code></pre>
+        <h2 class="text-xl font-bold mb-4 text-red-700">IMPORTANT</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Certain things should <strong>not</strong> be pushed to Git, but just kept locally on your machine. For example, environment variables (often in a <code class="text-sm bg-gray-200 px-1 rounded">.env</code> file) should never be pushed to Git, as they can pose a security risk if leaked (e.g., usernames and passwords to services and databases, API keys). Also, items that are unique to your local environment (like OS-specific files or automatically generated folders such as <code class="text-sm bg-gray-200 px-1 rounded">node_modules</code>) should be excluded, because these are not useful to others and can bloat repositories.
+        </p>
+
+        <p class="text-gray-700 leading-relaxed">
+          You can achieve this by adding these specific files and folders to your <code class="text-sm bg-gray-200 px-1 rounded">.gitignore</code> file, which should be placed in your project’s root directory. This ensures Git ignores them when staging and committing.
+        </p>
+      </div>
     </main>
   </div>
   <script type="module" src="../assets/js/sidebar.js"></script>

@@ -20,12 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
             </a>
           </li>
           <li>
-            <a href="#" class="block px-4 py-2 hover:bg-blue-500 rounded transition">
+            <a href="/express" class="block px-4 py-2 hover:bg-blue-500 rounded transition">
               Express.js
             </a>
           </li>
           <li>
-            <a href="#" class="block px-4 py-2 hover:bg-blue-500 rounded transition">
+            <a href="/restapi" class="block px-4 py-2 hover:bg-blue-500 rounded transition">
               Rest API
             </a>
           </li>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Node.js Documentation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Prism.js + Theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <!-- Additional Prism components for Bash, JSON, etc. -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="min-h-screen flex">
+    <div id="sidebar-container"></div>
+    <main class="flex-1 p-8 max-w-4xl mx-auto">
+      <!-- Card Container -->
+      <div class="bg-white shadow-lg rounded-md p-6 md:p-10">
+
+        <!-- START ORIGINAL CONTENT (unchanged) -->
+        <h1 class="text-3xl font-bold mb-6">Node.js</h1>
+
+        <p class="mb-4">
+          Node.js is a cross-platform runtime environment that runs on the V8 JavaScript engine, same as Google Chrome, but outside of the browser. So where client-side JavaScript is made to only be able to run inside of a browser, with Node.js we can build backend applications including  REST-API’s and other server-side functionalities that we wouldn’t be able to do in client-side JavaScript.
+        </p>
+
+        <p class="mb-4">
+          An important aspect of Node.js is its event-driven, non-blocking I/O architecture, which allows it to handle thousands of simultaneous connections efficiently. This model enables Node.js applications to perform asynchronous tasks—like database queries or network calls—without waiting (blocking) for tasks to finish before starting new ones. As a result, Node.js servers can handle heavy traffic efficiently, improving scalability and performance, without the developer having to manage the thread concurrency, which can be a very large task, and create a lot of bugs.
+        </p>
+
+        <p class="mb-4">
+          To run a file using Node, first of all you need to have Node installed on your device, which can be done by going to <a href="https://www.nodejs.org" class="text-blue-600 hover:underline">www.nodejs.org</a> and downloading the install file, or doing it directly from your terminal, using either Homebrew for macOS or Chocolatey for windows. After this to verify that you have Node and npm installed simply run:
+        </p>
+
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-bash">node -v 
+npm -v</code>
+        </pre>
+
+        <p class="mb-4">
+          If these are installed correctly, now cd into your directory and get the dependencies defined in your package.json installed, ensuring your project has the required packages to run the project. This is done by the command:
+        </p>
+
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-bash">npm install</code>
+        </pre>
+
+        <p class="mb-4">
+          Then after this simply run:
+        </p>
+
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-bash">node &lt;your-file&gt;.js</code>
+        </pre>
+
+        <h2 class="text-2xl font-bold mb-4">Nodemon</h2>
+
+        <p class="mb-4">
+          In addition to how we can run our Node.js files, let’s talk about Nodemon. Nodemon is a development tool that automatically restarts your Node.js server whenever it detects changes made to your code. If we do it with node app.js we have to manually restart our server every time there is a modification to our code. With Nodemon we would simply run
+        </p>
+
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-bash">nodemon app.js</code>
+        </pre>
+
+        <p class="mb-4">
+          So how do we install Nodemon? We will use the Node Package Manager, npm:
+        </p>
+
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-bash">npm install -g nodemon</code>
+        </pre>
+
+        <p class="mb-4">
+          the -g flag means that we are installing Nodemon globally, and it can be used in any Node.js project. If we only want to install nodemon for our specific project locally, so that it’s only used for development and not in production, we can use this command:
+        </p>
+
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-bash">npm install –save-dev nodemon</code>
+        </pre>
+
+        <p class="mb-4">
+          In addition to this we can then add two different scripts in our package.json, one for production and one for development, like this:
+        </p>
+
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-json">{
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  }
+}</code>
+        </pre>
+
+        <p class="mb-4">
+          Now we can start our development server with this command:
+        </p>
+
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-bash">npm run dev</code>
+        </pre>
+
+        <p class="mb-4">
+          Nodemon comes with some limitations, the first and most important is that it is not for production servers, as this can cause severe performance issues. Instead we should use a process manager like PM2.
+        </p>
+
+        <p class="mb-4">
+          Another limitation is that if you are working on a very large app, restarting every time a file changes can slow down development significantly. You can resolve this by creating a nodemon.json file, where we specify which files Nodemon should watch.
+        </p>
+
+        <p class="mb-4">
+          The last limitation I will cover is about Nodemon not restarting when environmental variables change. So if I make a change to any variable inside of .env, Nodemon won’t restart automatically, this can be solved by using the -r flag to reload these like this:
+        </p>
+
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-bash">nodemon -r dotenv/config server.js</code>
+        </pre>
+
+        <h2 class="text-2xl font-bold mb-4">NPM and package managers</h2>
+
+        <p class="mb-4">
+          NPM stands for Node Package Manager, and it is the default package manager for Node.js. It allows us as developers to install and manage dependencies, like external libraries and tools in our JavaScript and Node.js projects. When installing Node.js as described above, NPM is automatically installed with it. So why do we need this? Well before package managers, developers had to manually download and integrate all the JavaScript libraries they needed in their projects. This had a lot of issues with it, as dependencies had to be updated manually, collaborating on projects were difficult as people might have different versions of dependencies. So package managers made managing these things a whole lot easier. So how does NPM work? We can distinguish it into three main components:
+        </p>
+
+        <h3 class="text-xl font-bold mb-2">NPM registry</h3>
+        <p class="mb-4">
+          A only repository containing thousands of libraries and tools, where you via NPM can install these. If you are familiar with Docker, think of it as DockerHub where you can get the exact dependency that you need for developing your project.
+        </p>
+
+        <h3 class="text-xl font-bold mb-2">Command line interface</h3>
+        <p class="mb-4">
+          The npm command is used within a terminal to interact with the registry. This allows you to install, update and manage dependencies.
+        </p>
+
+        <h3 class="text-xl font-bold mb-2">package-json and package-lock.json</h3>
+        <p class="mb-4">
+          These two files keep track of the installed dependencies, their versions and how they are configured. There are various ways of generating these files, it can be done by manually writing it yourself, you can do it by the npm install command, and you can do it with bound expectations to what it should hold, declared by yourself by using npm init. Let’s walk through the various ways.
+        </p>
+
+        <h4 class="text-lg font-bold mb-2">Doing it manually</h4>
+        <p class="mb-4">
+          Inside the root of your project folder, create a package.json. In our case we want to install express so we create a file called package.json and then inside of it write:
+        </p>
+
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-json">{
+   "dependencies": {
+       "express": "4.21.2"
+   }
+}</code>
+        </pre>
+
+        <p class="mb-4">
+          Then inside of your terminal run npm install and this will generate all the dependencies needed for the chosen version of express to work.
+        </p>
+
+        <h4 class="text-lg font-bold mb-2">Doing it with bound expectations and metadata</h4>
+        <p class="mb-4">
+          You can also generate your package.json by typing npm init. This will ask you for different meta-data about your project. Note that this will not add Express.js as a dependency, you still have to install these manually. After going through all the steps your package.json will look something like this:
+        </p>
+
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-json">{
+ "name": "doginder",
+ "version": "0.0.1",
+ "description": "tinder for indian dogs",
+ "type": "module",
+ "main": "app.js",
+ "scripts": {
+   "dev":"cross-env PORT=8080 nodemon app.js",
+   "prod":"cross-env PORT=80 ENVIROMENT=PROD  node app.js"
+ },
+ "repository": {
+   "type": "git",
+   "url": "git+https://github.com/Aleksandergreg/NodeJS_Aleksander.git"
+ },
+ "keywords": [
+   "love",
+   "dogs",
+   "tinder",
+   "indian"
+ ],
+ "author": "",
+ "license": "ISC",
+ "bugs": {
+   "url": "https://github.com/Aleksandergreg/NodeJS_Aleksander/issues"
+ },
+ "homepage": "https://github.com/Aleksandergreg/NodeJS_Aleksander#readme",
+ "dependencies": {
+   "express": "^4.21.2"
+ },
+ "devDependencies": {
+   "cross-env": "^7.0.3"
+ }
+}</code>
+        </pre>
+
+        <p class="mb-4">
+          You then have to run npm install, and it will again generate your package-lock.json where the actual version of all your node_modules will be defined.
+        </p>
+
+        <h4 class="text-lg font-bold mb-2">Doing it automatically (let NPM handle everything)</h4>
+        <p class="mb-4">
+          Simply just run npm i express, and it will generate both your package.json, package-lock.json and node_modules folder. Note that this way doesn’t add any  meta-data like your GitHub repository or keywords.
+        </p>
+
+        <h2 class="text-2xl font-bold mb-4">Other Package Managers</h2>
+        <p class="mb-4">
+          As stated earlier, NPM is the default package manager for Node, but others also exist, with Yarn as an example. Yarn was created by Meta to improve the speed of downloading packages, as it supports parallel downloads.
+        </p>
+        
+        <p class="mb-4">
+          Also, other programming languages use different kinds of package managers. Here is a brief overview:
+        </p>
+        
+        <table class="w-full border-collapse border border-gray-300">
+          <thead>
+            <tr class="bg-gray-200">
+              <th class="border border-gray-300 px-4 py-2">Language</th>
+              <th class="border border-gray-300 px-4 py-2">Package Manager</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-gray-300 px-4 py-2">Java</td>
+              <td class="border border-gray-300 px-4 py-2">Maven</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 px-4 py-2">Python</td>
+              <td class="border border-gray-300 px-4 py-2">pip</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 px-4 py-2">Ruby</td>
+              <td class="border border-gray-300 px-4 py-2">RubyGems</td>
+            </tr>
+            <tr>
+              <td class="border border-gray-300 px-4 py-2">C# / .NET</td>
+              <td class="border border-gray-300 px-4 py-2">NuGet</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- END ORIGINAL CONTENT -->
+
+      </div>
+    </main>
+  </div>
+  <script type="module" src="../assets/js/sidebar.js"></script>
+</body>
+</html>

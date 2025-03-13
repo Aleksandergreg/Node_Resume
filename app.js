@@ -20,9 +20,18 @@ app.get("/nodejs", (req, res) => {
     res.sendFile(path.resolve('public/node.js/nodejs.html'))
 });
 
+app.get("/express", (req, res) => {
+    res.sendFile(path.resolve('public/express/express.html'))
+});
+
 app.get("/javascript", (req, res) =>{
     res.sendFile(path.resolve('public/javascript/javascript.html'))
 });
+
+app.get("/restapi", (req, res) =>{
+    res.sendFile(path.resolve('public/restapi/restapi.html'))
+});
+
 
 
 const PORT = Number(process.env.PORT) || 8080;

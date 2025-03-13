@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Git Documentation</title>
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+  <nav>
+    <ul class="navbar">
+      <li><a href="/">Home</a></li>
+      <li><a href="/git">Git</a></li>
+      <li><a href="#">Node.js</a></li>
+      <li><a href="#">Express.js</a></li>
+      <li><a href="#">Rest API</a></li>
+      <li class="dropdown">
+        <a href="#">JavaScript</a>
+        <ul class="dropdown-content">
+          <li><a href="#">Datatypes in JavaScript</a></li>
+          <li><a href="#">Scopes in JavaScript</a></li>
+          <li><a href="#">Functions in JavaScript</a></li>
+          <li><a href="#">Loops in JavaScript</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <main>
+    <h1>Git</h1>
+
+    <p>Git is a version control system that, cut down to the bone,  helps us as developers to keep track of the changes we made to our code over time. Imagine it like this, you want to make a change to your project, but you are afraid it will make your project break, so you save your project as Project_v1, so you are sure you have a working version. Then you implement your new feature, so now you save your project as Project_v2. This would solve the issue, but it quickly gets messy, think of you having projects called Project_final and Project_final_final and so on.</p>
+
+    <p>It also allows us to collaborate and share our code with group members, and other people who would be interested in our code. Because of the version control it also allows us to play around with new features, without having to be afraid of breaking our application, as we can make roll back to earlier commits in the projects, create branches, so we don’t break the code that exists on either our development or production branch.</p>
+
+    <p>The most important Git commands to be able to work with Git on GitHub or any other cloud-based platform for version control and collaboration, using any kind of terminal:</p>
+
+    <p><strong>Cloning a repository:</strong></p>
+    <pre><code>git clone &lt;url-to-the-repository-you-would-like-to-work-or-collaborate-on&gt;</code></pre>
+
+    <p><strong>Initialise Git(if your project is not already a Git repository, not needed if you have cloned):</strong></p>
+    <pre><code>git init</code></pre>
+
+    <p><strong>Stage the changes:</strong></p>
+    <pre><code>git add .
+
+git add -A
+</code></pre>
+
+    <p>git add . will stage all your new and modified files, but does not stage deletions, in your current directory, e.g what directory you have cd’ed in in your project.</p>
+
+    <p>git add -A will stage all the changes you have made to your project, including deletions, no matter which path you are on in your project.</p>
+
+    <p><strong>Create a snapshot of your changes:</strong></p>
+    <p>With the git add command, we have actually not saved the changes anywhere, we have just told Git that it is these changes that we would like to continue with. To create a snapshot of your changes use this command:</p>
+
+    <pre><code>git commit -m “a good commit message here”
+</code></pre>
+
+    <p>Making good commit messages is really important, but can also be a little bit tricky. You do not want to write 1500 words here, about everything you changed in great detail, this should be added as documentation if necessary, but also you don’t want to create commit messages that state “fixed stuff”. Think about doing it in keywords, that briefly describes what you have implemented or changed, in this manner “[Type], Short description(Optional File or module name)”, e.g “fix: resolve null pointer in bookingController”. In relation to this it is also important to stage and commit changes, everytime you make a change, so a commit is not hundreds of lines of code. Adhering to this practice, will it make it easier for you to find exactly what you are looking for in earlier commits, without having to read unnecessary and redundant changes that are not applied to what you are looking for.</p>
+
+    <p><strong>Connecting to a GitHub repository:</strong></p>
+    <p>With the git add and git commit command, we have now saved our changes to our local git history. Now we would like to push it to a remote repository, for a better overview and being able to collaborate with others. This is not needed if you have used the git clone command, as your local repository is already linked to the remote repository. This is done by the following command:</p>
+
+    <pre><code>git remote add origin https://github.com/your-username/your-repository.git
+</code></pre>
+
+    <p>If you want to check the remote URL, and not just assuming it’s linked use the command:</p>
+
+    <pre><code>git remote -v
+</code></pre>
+
+    <p><strong>Pushing the changes to GitHub:</strong></p>
+    <p>The first time you are doing it you should run:</p>
+
+    <pre><code>git push -u origin main
+</code></pre>
+
+    <p>This tells Git to push to your upstream branch called main and set this as your default upstream branch. You can push to any branch you would like by changing this, and of course adhering to your chosen branching strategy. In the future you can then just do it like this:</p>
+
+    <pre><code>git push
+</code></pre>
+
+    <p><strong>Pulling changes from GitHub:</strong></p>
+    <p>As Git and GitHub are used for collaboration, the current structure you have on your project might have been changed by someone else. Before you start working on your bug fix or feature implementation you would like to get these changes down locally. You do this by the following command:</p>
+
+    <pre><code>git pull
+</code></pre>
+
+    <p>IMPORTANT: Certain things should not be pushed to Git, but just kept locally on your machine. Things like environment variables, that you keep in a .env file, should never be pushed to Git, as it can pose a security risk if getting leaked, like username and password to services and databases, API keys. Also things that are unique for your environment on your computer should not be pushed either, as people will not be able to use it, unless they are using the exact same OS, settings and configurations as you.  An example of this could be our node_modules generated when we run npm i Express. Same goes for the database itself, as this most likely will hold sensitive information, and it is considered bad practice to commit these. This can be done by adding these specific files to your .gitignore folder, that should be placed in your root folder.</p>
+
+  </main>
+</body>
+</html>

@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
           </li>
           <li>
             <div class="group">
-              <a href="#" class="block px-4 py-2 hover:bg-blue-500 rounded transition">
+              <a href="/javascript" class="block px-4 py-2 hover:bg-blue-500 rounded transition">
                 JavaScript
               </a>
               <ul class="hidden group-hover:block bg-blue-700 mt-1 space-y-2 rounded">

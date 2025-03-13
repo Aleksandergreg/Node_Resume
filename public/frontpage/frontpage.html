@@ -1,39 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Documentation Frontpage</title>
-  <link rel="stylesheet" href="../css/styles.css">
+  <meta charset="UTF-8" />
+  <title>Frontpage</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100">
 
-    <nav>
-        <ul class="navbar">
-          <li><a href="/">Home</a></li>
-          <li><a href="/git">Git</a></li>
-          <li><a href="#">Node.js</a></li>
-          <li><a href="#">Express.js</a></li>
-          <li><a href="#">Rest API</a></li>
-          <li class="dropdown">
-            <a href="#">JavaScript</a>
-            <ul class="dropdown-content">
-              <li><a href="#">Datatypes in JavaScript</a></li>
-              <li><a href="#">Scopes in JavaScript</a></li>
-              <li><a href="#">Functions in JavaScript</a></li>
-              <li><a href="#">Loops in JavaScript</a></li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      
+  <div class="min-h-screen flex">
+    <div id="sidebar-container" class="h-screen"></div>
 
-  <main>
-    <h1>Welcome to My Documentation</h1>
-    <p>
-      This page serves as an overview of everything we've covered so far:
-      Git, Node.js, Express.js, REST APIs, and JavaScript concepts (Datatypes, Scopes, Functions, Loops).
-    </p>
-  </main>
+    <main class="flex-1 p-8">
+      <h1 class="text-3xl font-bold mb-4">Welcome to My Documentation</h1>
+      <p class="mb-2">
+        This page serves as an overview of everything we've covered so far:
+        Git, Node.js, Express.js, REST APIs, and JavaScript concepts 
+        (Datatypes, Scopes, Functions, Loops).
+      </p>
+      <p>
+        Use the diagonal sidebar to navigate through the different topics.
+      </p>
+    </main>
+  </div>
 
+  <script type="module" src="../assets/js/sidebar.js"></script>
 </body>
 </html>

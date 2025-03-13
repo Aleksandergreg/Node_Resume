@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </a>
           </li>
           <li>
-            <a href="#" class="block px-4 py-2 hover:bg-blue-500 rounded transition">
+            <a href="/nodejs" class="block px-4 py-2 hover:bg-blue-500 rounded transition">
               Node.js
             </a>
           </li>

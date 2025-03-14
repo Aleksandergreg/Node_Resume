@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const sidebarContainer = document.getElementById('sidebar-container');
   sidebarContainer.innerHTML = `
-    <nav class="relative w-64 h-full bg-blue-600 text-white transform -skew-y-6">
+    <nav class="fixed top-0 w-48 h-full bg-blue-700 text-white transform -skew-y-6">
       <div class="absolute inset-0 transform skew-y-6">
         <ul class="py-8 space-y-4">
           <li>
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="block px-4 py-2 hover:bg-blue-600 transition">
+                  <a href="/javascript/#loops" class="block px-4 py-2 hover:bg-blue-600 transition">
                     Loops in JavaScript
                   </a>
                 </li>

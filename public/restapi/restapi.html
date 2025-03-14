@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>REST API Documentation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-http.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="min-h-screen flex">
+    <div id="sidebar-container"></div>
+    <main class="flex-1 max-w-6xl mx-auto py-8 px-4 md:px-12">
+      <div class="bg-white shadow-lg rounded-md p-6 md:p-10">
+
+        
+        <h1 class="text-3xl font-bold mb-6">REST API</h1>
+        
+        <p class="mb-4">
+          A REST API (Representational State Transfer - Application Programming Interface) is a way for systems to communicate over the internet using HTTP methods. I’ve tried to break down the key concepts of REST API’s to three modules:
+        </p>
+        
+        <ul class="list-disc list-inside mb-4">
+          <li>Stateless: each request from a client to the server must contain all needed information to process this request.</li>
+          <li>Client-server architecture: The client, in our case a web browser, makes a request to a server. The server processes this request and returns a response.</li>
+          <li>Resource-based: Resources are represented as endpoints (URLS). Each resource can then be manipulated using HTTP-methods.</li>
+        </ul>
+        
+        <h2 class="text-2xl font-bold mb-4">HTTP methods in REST-API’s</h2>
+        
+        <p class="mb-4 font-semibold">Table 1:</p>
+        
+        <div class="overflow-x-auto mb-4">
+          <table class="min-w-full border border-gray-300">
+            <thead class="bg-gray-200">
+              <tr>
+                <th class="px-4 py-2 border border-gray-300">Method</th>
+                <th class="px-4 py-2 border border-gray-300">Usage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="px-4 py-2 border border-gray-300">GET</td>
+                <td class="px-4 py-2 border border-gray-300">Retrieves the data on the endpoint</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border border-gray-300">POST</td>
+                <td class="px-4 py-2 border border-gray-300">Create a new resource</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border border-gray-300">PUTCH</td>
+                <td class="px-4 py-2 border border-gray-300">Update an entire resource</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border border-gray-300">PATCH</td>
+                <td class="px-4 py-2 border border-gray-300">Partially update a resource</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border border-gray-300">DELETE</td>
+                <td class="px-4 py-2 border border-gray-300">Remove a resource</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <h2 class="text-2xl font-bold mb-4">REST conventions:</h2>
+        
+        <p class="mb-4">
+          When designing a REST API we should follow the three REST conventions that states:
+        </p>
+        
+        <ul class="list-disc list-inside mb-4">
+          <li>Using the right HTTP verb</li>
+          <li>Ordering</li>
+          <li>Naming that maps to collections in your system</li>
+        </ul>
+        
+        <p class="mb-4">
+          So what do these conventions actually mean? Let’s start from the top and explain it in greater detail.
+        </p>
+        
+        <p class="mb-4">
+          Using the right HTTP verb, pretty self explanatory right? If you are creating a new resource use POST, if you are removing a resource use DELETE.
+        </p>
+        
+        <p class="mb-4">
+          Ordering, the order of your REST API should follow the order in Table 1. The reason for this is that it makes your code more maintainable and readable. If I need to check something on my delete method, I know that I just need to scroll to the bottom of my file.
+        </p>
+        
+        <p class="mb-4">
+          Naming that maps to collections in your system, so let's say we are building a movie collection, we have a collection called movies in our system. This should be a noun and in plural, so even if you have a method for just retrieving one movie, the endpoint should still be /movies/{id} . Let’s create a table for this for a better overview:
+        </p>
+        
+        <div class="overflow-x-auto">
+          <table class="min-w-full border border-gray-300">
+            <thead class="bg-gray-200">
+              <tr>
+                <th class="px-4 py-2 border border-gray-300">Action</th>
+                <th class="px-4 py-2 border border-gray-300">HTTP Method</th>
+                <th class="px-4 py-2 border border-gray-300">Endpoint</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="px-4 py-2 border border-gray-300">Get all movies</td>
+                <td class="px-4 py-2 border border-gray-300">GET</td>
+                <td class="px-4 py-2 border border-gray-300">/movies</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border border-gray-300">Get a specific movie</td>
+                <td class="px-4 py-2 border border-gray-300">GET</td>
+                <td class="px-4 py-2 border border-gray-300">/movies/{id}</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border border-gray-300">Add a new movie</td>
+                <td class="px-4 py-2 border border-gray-300">POST</td>
+                <td class="px-4 py-2 border border-gray-300">/movies</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border border-gray-300">Update a movie</td>
+                <td class="px-4 py-2 border border-gray-300">PUT</td>
+                <td class="px-4 py-2 border border-gray-300">/movies/{id}</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-2 border border-gray-300">Delete a movie</td>
+                <td class="px-4 py-2 border border-gray-300">DELETE</td>
+                <td class="px-4 py-2 border border-gray-300">movies/{id}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <h1 class="text-3xl font-bold mb-6">Implementing a full CRUD REST API</h1>
+        
+        <p class="mb-4">
+          Now that we have set up our server, we can start defining our routes in our Express.js code.
+        </p>
+        
+        <p class="mb-4">
+          CRUD = Create, Read, Update, Delete
+        </p>
+        
+        <p class="mb-4">
+          A CRUDable REST API that allows clients, e.g web browser, Postman or a mobile app to perform these fundamental operations on resources.
+        </p>
+        
+        <h2 class="text-2xl font-bold mb-4">GET all fingerbones</h2>
+        
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-javascript">app.get(“/fingerbones”, (req, res) => {
+	res.send({ data: fingerBones });
+});</code>
+        </pre>
+        
+        <p class="mb-4">
+          Fetches all fingerbones, and responds with a JSON object containing the fingerBones array.
+        </p>
+        
+        <h2 class="text-2xl font-bold mb-4">GET a single fingerbone by ID</h2>
+        
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-javascript">app.get("/fingerbones/:id", (req, res) => {
+    const providedFingerBoneId = Number(req.params.id);
+    const foundFingerBone = fingerBones.find((fingerBone) => fingerBone.id === providedFingerBoneId);
+
+    if (!foundFingerBone) {
+        res.status(404).send({ error: `No finger bones found with id ${providedFingerBoneId}` });
+    } else {
+        res.send({ data: foundFingerBone });
+    }
+});</code>
+        </pre>
+        
+        <p class="mb-4">
+          Uses req.params.id to extract the ID from the URL<br>
+          Finds the matching fingerbone in the fingerBone array<br>
+          If not found it will send a HTTP 404 Not Found error.
+        </p>
+        
+        <h2 class="text-2xl font-bold mb-4">POST a new fingerbone</h2>
+        
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-javascript">app.post("/fingerbones", (req, res) => {
+    const newFingerBone = req.body;
+    newFingerBone.id = nextId++;
+
+    fingerBones.push(newFingerBone);
+
+    res.send({ data: newFingerBone });
+});</code>
+        </pre>
+        
+        <p class="mb-4">
+          Extracts new data from req.body that was sent in the request<br>
+          Assigns a new unique ID by using the nextId++<br>
+          Adds it to the fingerBones array<br>
+          Responds with the created object
+        </p>
+        
+        <p class="mb-4 font-semibold">Example request:</p>
+        
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-http">POST /fingerbones
+Content-Type: application/json
+
+{
+    "name": "Metacarpal Phalange"
+}</code>
+        </pre>
+        
+        <p class="mb-4 font-semibold">Example response:</p>
+        
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-json">{
+    "data": { "id": 3, "name": "Metacarpal Phalange" }
+}</code>
+        </pre>
+        
+        <h2 class="text-2xl font-bold mb-4">PATCH an existing fingerbone</h2>
+        
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-javascript">app.patch("/fingerbones/:id", (req, res) => {
+    const providedFingerBoneId = Number(req.params.id);
+    const foundFingerBoneIndex = fingerBones.findIndex((fingerBone) => fingerBone.id === providedFingerBoneId);
+    
+    if (foundFingerBoneIndex === -1) {
+        res.status(404).send({ error: `No finger bones found with id ${providedFingerBoneId}` });
+    } else {
+        const existingFingerBone = fingerBones[foundFingerBoneIndex];
+        
+        const newFingerBone = { ...existingFingerBone, ...req.body, id: existingFingerBone.id };
+
+        fingerBones[foundFingerBoneIndex] = newFingerBone;
+
+        res.send({ data: newFingerBone });
+    }
+});</code>
+        </pre>
+        
+        <p class="mb-4">
+          Finds the object by it’s ID<br>
+          If not found it will return a 404 Not Found status code<br>
+          Uses a spread operator … to merge the old and the new data<br>
+          Keeps the original ID intact
+        </p>
+        
+        <p class="mb-4 font-semibold">Example request:</p>
+        
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-http">PATCH /fingerbones/2
+Content-Type: application/json
+
+{
+    "name": "Proximal Phalange"
+}</code>
+        </pre>
+        
+        <p class="mb-4 font-semibold">Example response:</p>
+        
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-json">{
+    "data": { "id": 2, "name": "Proximal Phalange" }
+}</code>
+        </pre>
+        
+        <h2 class="text-2xl font-bold mb-4">DELETE a fingerbone</h2>
+        
+        <pre class="bg-gray-800 text-white p-4 rounded mb-4 whitespace-pre border-l-4 border-blue-500">
+<code class="language-javascript">app.delete("/fingerbones/:id", (req, res) => {
+    const providedFingerBoneId = Number(req.params.id);
+    const foundFingerBoneIndex = fingerBones.findIndex((fingerBone) => fingerBone.id === providedFingerBoneId);
+    
+    if (foundFingerBoneIndex === -1) {
+        res.status(404).send({ error: `No finger bones found with id ${providedFingerBoneId}` });
+    } else {
+        fingerBones.splice(foundFingerBoneIndex, 1);
+        res.status(204).send();
+    }
+});</code>
+        </pre>
+        
+        <p class="mb-4">
+          Finds the object by it’s ID<br>
+          If not found it will return a 404 Not Found statuscodes<br>
+          Removes the item using the JavaScript method splice()<br>
+          Sends a 204 No Content status code, which is considered best practice for DELETE
+        </p>
+        
+        
+      </div>
+    </main>
+  </div>
+  <script type="module" src="../assets/js/sidebar.js"></script>
+</body>
+</html>

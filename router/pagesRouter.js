@@ -4,7 +4,11 @@ import { readPage, constructPage } from '../util/templatingEngine.js';
 
 const router = Router();
 
-router.get("/")
+router.get("/", (req, res) => {
+    const frontPage = readPage(path.resolve("./public/pages/frontpage/frontpage.html"));
+    const page = constructPage(frontPage, { title: "Frontpage"});
+    res.send(page);
+});
 
 router.get("/express", (req, res) => {
     const expressPage = readPage(path.resolve("./public/pages/express/express.html"));

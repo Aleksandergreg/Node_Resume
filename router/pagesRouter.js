@@ -1,9 +1,10 @@
-import { Router } from "express";
-import path from "path";
-import { readPage, constructPage } from "../util/templatingEngine.js";
+import { Router } from 'express';
+import path from 'path';
+import { readPage, constructPage } from '../util/templatingEngine.js';
 
 const router = Router();
 
+router.get("/")
 
 router.get("/express", (req, res) => {
     const expressPage = readPage(path.resolve("./public/pages/express/express.html"));

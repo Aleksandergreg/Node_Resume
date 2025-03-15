@@ -4,7 +4,7 @@ import { readPage, constructPage } from '../util/templatingEngine.js';
 
 const router = Router();
 
-import { frontpagePage, gitPage, nodejsPage, expressPage } from '../util/pages.js';
+import { frontpagePage, gitPage, nodejsPage, expressPage, restapiPage } from '../util/pages.js';
 
 router.get("/", (req, res) => {
     res.send(frontpagePage);
@@ -22,4 +22,8 @@ router.get("/express", (req, res) => {
     res.send(expressPage);
   });
 
-  export default router;
+router.get("/restapi", (req, res) => {
+    res.send(restapiPage);
+});
+
+export default router;

@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
               </a>
             </li>
             <li>
-              <a href="/git" class="block px-3 py-2 rounded bg-primary-100 text-primary-700 font-medium">
+              <a href="/git" class="block px-3 py-2 rounded hover:bg-primary-50 transition text-secondary-700 hover:text-primary-700">
                 Git
               </a>
             </li>
@@ -52,17 +52,17 @@ document.addEventListener('DOMContentLoaded', function() {
               </div>
               <ul id="js-dropdown" class="hidden bg-secondary-50 rounded-md mt-1 mb-1 py-1 space-y-0">
                 <li>
-                  <a href="/javascript/datatypes" class="block px-6 py-1.5 text-sm hover:bg-primary-50 transition text-secondary-700 hover:text-primary-700">
+                  <a href="/javascript/#datatypes" class="block px-6 py-1.5 text-sm hover:bg-primary-50 transition text-secondary-700 hover:text-primary-700">
                     Datatypes
                   </a>
                 </li>
                 <li>
-                  <a href="/javascript/scopes" class="block px-6 py-1.5 text-sm hover:bg-primary-50 transition text-secondary-700 hover:text-primary-700">
+                  <a href="/javascript/#scopes" class="block px-6 py-1.5 text-sm hover:bg-primary-50 transition text-secondary-700 hover:text-primary-700">
                     Scopes
                   </a>
                 </li>
                 <li>
-                  <a href="/javascript/functions" class="block px-6 py-1.5 text-sm hover:bg-primary-50 transition text-secondary-700 hover:text-primary-700">
+                  <a href="/javascript/#functions" class="block px-6 py-1.5 text-sm hover:bg-primary-50 transition text-secondary-700 hover:text-primary-700">
                     Functions
                   </a>
                 </li>

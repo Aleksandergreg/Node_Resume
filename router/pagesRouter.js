@@ -4,16 +4,22 @@ import { readPage, constructPage } from '../util/templatingEngine.js';
 
 const router = Router();
 
+import { frontpagePage, gitPage, nodejsPage, expressPage } from '../util/pages.js';
+
 router.get("/", (req, res) => {
-    const frontPage = readPage(path.resolve("./public/pages/frontpage/frontpage.html"));
-    const page = constructPage(frontPage, { title: "Frontpage"});
-    res.send(page);
+    res.send(frontpagePage);
+});
+
+router.get("/git", (req, res) => {
+    res.send(gitPage);
+});
+
+router.get("/nodejs", (req, res) => {
+    res.send(nodejsPage);
 });
 
 router.get("/express", (req, res) => {
-    const expressPage = readPage(path.resolve("./public/pages/express/express.html"));
-    const page = constructPage(expressPage, { title: "Express Info" });
-    res.send(page);
+    res.send(expressPage);
   });
 
   export default router;

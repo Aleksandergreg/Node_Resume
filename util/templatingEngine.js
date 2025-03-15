@@ -6,7 +6,7 @@ export function readPage(filePath) {
 }
 
 const header = readPage(path.resolve("./public/components/header/header.html"));
-const footer = readPage(path.resolve)("./public/components/footer/footer.html");
+const footer = readPage(path.resolve("./public/components/footer/footer.html"));
 
 export function constructPage(pageContent, options = {}) {
     let fullPage = header

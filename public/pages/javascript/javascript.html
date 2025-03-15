@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>JavaScript Documentation</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="../../assets/js/tailwind-config.js"></script>
-  
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
@@ -28,24 +29,28 @@
         </div>
 
         <div class="prose lg:prose-lg max-w-none">
-          
+
           <div class="mb-8">
             <h2 class="text-xl font-semibold mb-4 text-primary-800">Contents</h2>
             <ul class="space-y-2">
               <li class="flex items-center">
-                <span class="inline-block w-5 h-5 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">1</span>
+                <span
+                  class="inline-block w-5 h-5 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">1</span>
                 <a href="#data-types" class="text-primary-600 hover:underline">Data types in JavaScript</a>
               </li>
               <li class="flex items-center">
-                <span class="inline-block w-5 h-5 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">2</span>
+                <span
+                  class="inline-block w-5 h-5 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">2</span>
                 <a href="#scopes" class="text-primary-600 hover:underline">Scopes in JavaScript</a>
               </li>
               <li class="flex items-center">
-                <span class="inline-block w-5 h-5 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">3</span>
+                <span
+                  class="inline-block w-5 h-5 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">3</span>
                 <a href="#functions" class="text-primary-600 hover:underline">Functions in JavaScript</a>
               </li>
               <li class="flex items-center">
-                <span class="inline-block w-5 h-5 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">4</span>
+                <span
+                  class="inline-block w-5 h-5 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">4</span>
                 <a href="#loops" class="text-primary-600 hover:underline">Loops in JavaScript</a>
               </li>
             </ul>
@@ -53,14 +58,15 @@
 
           <section id="data-types" class="space-y-6 mb-12">
             <h2 class="text-2xl font-semibold mb-4 text-primary-800 flex items-center">
-              <span class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">1</span>
+              <span
+                class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">1</span>
               Data types in JavaScript
             </h2>
 
             <p class="text-secondary-700 leading-relaxed">
               JavaScript has 8 data types:
             </p>
-            
+
             <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
 <code class="language-javascript">
 const StringExample = "I am a string";
@@ -76,7 +82,9 @@ const ObjectExample = { key: "value" };
 
             <p class="font-semibold text-secondary-700 leading-relaxed">Type coercion</p>
             <p class="text-secondary-700 leading-relaxed mb-4">
-              Type coercion is when JavaScript converts one data type into another when performing operations between different types. In general you can say there are two types of coercion: implicit coercion, which happens automatically, and explicit coercion, where you as a developer handle it manually.
+              Type coercion is when JavaScript converts one data type into another when performing operations between
+              different types. In general you can say there are two types of coercion: implicit coercion, which happens
+              automatically, and explicit coercion, where you as a developer handle it manually.
             </p>
 
             <p class="font-semibold text-secondary-700 leading-relaxed">Examples of implicit coercion:</p>
@@ -98,11 +106,14 @@ console.log(Boolean(1)); // true
             </pre>
 
             <p class="text-secondary-700 leading-relaxed mb-4">
-              So why is this an issue? It can lead to unintended behaviour that can create bugs due to unexpected type changes. It also makes your code stink, making it harder to read and maintain. So how can we avoid this?
+              So why is this an issue? It can lead to unintended behaviour that can create bugs due to unexpected type
+              changes. It also makes your code stink, making it harder to read and maintain. So how can we avoid this?
             </p>
 
             <p class="text-secondary-700 leading-relaxed mb-4">
-              The first thing you can implement in your code is to always use strict equality defined by === instead of non strict ==. Strict equality does not perform type conversion. So as an example if you have an if statement, don’t use loose comparisons like == and != but instead use the strict equality.
+              The first thing you can implement in your code is to always use strict equality defined by === instead of
+              non strict ==. Strict equality does not perform type conversion. So as an example if you have an if
+              statement, don’t use loose comparisons like == and != but instead use the strict equality.
             </p>
 
             <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
@@ -155,7 +166,8 @@ console.log(num + 5); // “55” (string concatenation)
 
           <section id="scopes" class="space-y-6 mb-12">
             <h2 class="text-2xl font-semibold mb-4 text-primary-800 flex items-center">
-              <span class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">2</span>
+              <span
+                class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">2</span>
               Scopes in JavaScript
             </h2>
 
@@ -179,7 +191,8 @@ console.log(num + 5); // “55” (string concatenation)
 
             <p class="font-semibold text-secondary-700 leading-relaxed">Global scope</p>
             <p class="text-secondary-700 leading-relaxed mb-4">
-              Variables declared outside of any function or block are defined as having global scope. You can access these variables from anywhere in your code.
+              Variables declared outside of any function or block are defined as having global scope. You can access
+              these variables from anywhere in your code.
             </p>
 
             <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
@@ -214,7 +227,9 @@ console.log(functionScopedConst); // ReferenceError: functionScopedConst is not 
 
             <p class="font-semibold text-secondary-700 leading-relaxed">Block scope</p>
             <p class="text-secondary-700 leading-relaxed mb-4">
-              Variables defined inside a block, which is declared by { }, like loops or conditionals, can only be accessed within this block. Here it’s important to notice that only let and const are block-scoped, var is not, and are one of the reasons why we should never use var. This can be seen in this example:
+              Variables defined inside a block, which is declared by { }, like loops or conditionals, can only be
+              accessed within this block. Here it’s important to notice that only let and const are block-scoped, var is
+              not, and are one of the reasons why we should never use var. This can be seen in this example:
             </p>
 
             <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
@@ -233,7 +248,10 @@ console.log(c); // ReferenceError: c is not defined
 
             <p class="font-semibold text-secondary-700 leading-relaxed">Why do we prefer const then?</p>
             <p class="text-secondary-700 leading-relaxed mb-4">
-              Using const clarifies our intention, protects against us accidently reassigning, and improves the predictability of our code. It is important to note that const does not prevent mutations, it just prevents reassignments. If you want to make a object or array immutable, you can use JavaScripts build in method Object.freeze()
+              Using const clarifies our intention, protects against us accidently reassigning, and improves the
+              predictability of our code. It is important to note that const does not prevent mutations, it just
+              prevents reassignments. If you want to make a object or array immutable, you can use JavaScripts build in
+              method Object.freeze()
             </p>
 
             <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
@@ -248,7 +266,8 @@ obj.name = "Anders"; // this will fail silently, unless you are using strict mod
             </p>
 
             <ul class="space-y-2 mb-6 text-secondary-700 leading-relaxed list-outside list-disc ml-6">
-              <li>Always use const by default as it clearly expresses your intent and prevents accidental reassignment</li>
+              <li>Always use const by default as it clearly expresses your intent and prevents accidental reassignment
+              </li>
               <li>Use let only when reassignment is absolutely needed</li>
               <li>Never use var in modern JavaScript</li>
             </ul>
@@ -256,17 +275,20 @@ obj.name = "Anders"; // this will fail silently, unless you are using strict mod
 
           <section id="functions" class="space-y-6 mb-12">
             <h2 class="text-2xl font-semibold mb-4 text-primary-800 flex items-center">
-              <span class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">3</span>
+              <span
+                class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">3</span>
               Functions in JavaScript
             </h2>
 
             <p class="text-secondary-700 leading-relaxed mb-4">
-              When working with functions in JavaScript it is important to know about hoisting, function expressions, arrow functions and callbacks. Let’s work our way through these, and attempt to define them.
+              When working with functions in JavaScript it is important to know about hoisting, function expressions,
+              arrow functions and callbacks. Let’s work our way through these, and attempt to define them.
             </p>
 
             <p class="font-semibold text-secondary-700 leading-relaxed">Hoisting</p>
             <p class="text-secondary-700 leading-relaxed mb-4">
-              Hoisting means that function declarations are lifted into the top of the scope they are declared in before the code. In other words, you can call a function before it is defined in the code.
+              Hoisting means that function declarations are lifted into the top of the scope they are declared in before
+              the code. In other words, you can call a function before it is defined in the code.
             </p>
 
             <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
@@ -280,12 +302,14 @@ function getRandomInt(min, max){
             </pre>
 
             <p class="text-secondary-700 leading-relaxed mb-4">
-              The function getRandomInt is what we call a function declaration, so it is being hoisted to the top of our script. This allows us to call getRandomInt(0,10) before its definition.
+              The function getRandomInt is what we call a function declaration, so it is being hoisted to the top of our
+              script. This allows us to call getRandomInt(0,10) before its definition.
             </p>
 
             <p class="font-semibold text-secondary-700 leading-relaxed">Function expressions vs arrow functions</p>
             <p class="text-secondary-700 leading-relaxed mb-4">
-              Compared to function declarations, function expressions and arrow functions are not being hoisted. Let’s look at an example of function expression first.
+              Compared to function declarations, function expressions and arrow functions are not being hoisted. Let’s
+              look at an example of function expression first.
             </p>
 
             <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
@@ -297,7 +321,9 @@ const getRandomIntAnonymousFunction = function (min, max) {
             </pre>
 
             <p class="text-secondary-700 leading-relaxed mb-4">
-              The function is stored inside of a variable, and since const and let are not hoisted in the same way as a function declaration, making it impossible for us to call it before it is defined. The same goes for if we had defined it as an arrow function stored in a variable.
+              The function is stored inside of a variable, and since const and let are not hoisted in the same way as a
+              function declaration, making it impossible for us to call it before it is defined. The same goes for if we
+              had defined it as an arrow function stored in a variable.
             </p>
 
             <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
@@ -310,7 +336,8 @@ const getRandomIntArrowFunction = (min, max) => {
 
             <p class="font-semibold text-secondary-700 leading-relaxed">Callbacks</p>
             <p class="text-secondary-700 leading-relaxed mb-4">
-              A callback is a function that can be passed as an argument to another function, but doesn’t have to be passed. An example of this could be:
+              A callback is a function that can be passed as an argument to another function, but doesn’t have to be
+              passed. An example of this could be:
             </p>
 
             <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
@@ -338,12 +365,14 @@ console.log(genericPerformer("Lasse", codingAction));
             </pre>
 
             <p class="text-secondary-700 leading-relaxed mb-4">
-              The function codingAction is passed to our genericPerformer function, which will call it with the parameter “Lasse”
+              The function codingAction is passed to our genericPerformer function, which will call it with the
+              parameter “Lasse”
             </p>
 
             <p class="font-semibold text-secondary-700 leading-relaxed">Passing anonymous functions as callbacks</p>
             <p class="text-secondary-700 leading-relaxed mb-4">
-              As just shown with defining a separate function first, you can pass it directly as an anonymous function as the argument. This can be done like this:
+              As just shown with defining a separate function first, you can pass it directly as an anonymous function
+              as the argument. This can be done like this:
             </p>
 
             <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
@@ -372,12 +401,19 @@ console.log(genericPerformer("Tara", boxingAction));
 
           <section id="loops" class="space-y-6 mb-12">
             <h2 class="text-2xl font-semibold mb-4 text-primary-800 flex items-center">
-              <span class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">4</span>
+              <span
+                class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">4</span>
               Loops in JavaScript
             </h2>
 
             <p class="text-secondary-700 leading-relaxed mb-4">
-              In JavaScript adopting a functional programming approach when working with arrays, promotes code that doesn’t stink, is more readable and maintainable. Using methods like map, filter and reduce allows us as developers to process data as pure functions, making them immutable, and without relying on explicit loops, and thereby minimizing side effects and maintaining high code predictability. Using these functional methods will make sure that we are not editing on the actual array, but instead creating a new one, which leads to no side effects. Let’s go through the ways of working with arrays in a functional way. Let’s look at some code examples:
+              In JavaScript adopting a functional programming approach when working with arrays, promotes code that
+              doesn’t stink, is more readable and maintainable. Using methods like map, filter and reduce allows us as
+              developers to process data as pure functions, making them immutable, and without relying on explicit
+              loops, and thereby minimizing side effects and maintaining high code predictability. Using these
+              functional methods will make sure that we are not editing on the actual array, but instead creating a new
+              one, which leads to no side effects. Let’s go through the ways of working with arrays in a functional way.
+              Let’s look at some code examples:
             </p>
 
             <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
@@ -399,7 +435,8 @@ const sum = numbers.reduce((total, num) => total + num, 0);
 </code>
             </pre>
 
-            <p class="font-semibold text-secondary-700 leading-relaxed">Choosing the right method for the right purpose</p>
+            <p class="font-semibold text-secondary-700 leading-relaxed">Choosing the right method for the right purpose
+            </p>
             <ul class="space-y-2 mb-6 text-secondary-700 leading-relaxed list-outside list-disc ml-6">
               <li>Use map whenever we need to transform each element of an array into something else</li>
               <li>Use filter when we need to select a subset of the elements based on a certain condition</li>
@@ -416,4 +453,5 @@ const sum = numbers.reduce((total, num) => total + num, 0);
 
   <script type="module" src="../assets/js/sidebar.js"></script>
 </body>
+
 </html>

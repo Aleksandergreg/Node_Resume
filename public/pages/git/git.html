@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Git Documentation</title>
@@ -11,6 +12,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
 
 </head>
+
 <body class="bg-secondary-50 antialiased text-secondary-800">
   <div class="min-h-screen flex">
     <div id="sidebar-container" class="flex-shrink-0"></div>
@@ -24,45 +26,62 @@
 
         <div class="prose lg:prose-lg max-w-none">
           <p class="text-secondary-700 leading-relaxed mb-6">
-            Git is a version control system that, cut down to the bone, helps us as developers to keep track of the changes we made to our code over time. Imagine it like this, you want to make a change to your project, but you are afraid it will make your project break, so you save your project as Project_v1, so you are sure you have a working version. Then you implement your new feature, so now you save your project as Project_v2. This would solve the issue, but it quickly gets messy, think of you having projects called Project_final and Project_final_final and so on.
+            Git is a version control system that, cut down to the bone, helps us as developers to keep track of the
+            changes we made to our code over time. Imagine it like this, you want to make a change to your project, but
+            you are afraid it will make your project break, so you save your project as Project_v1, so you are sure you
+            have a working version. Then you implement your new feature, so now you save your project as Project_v2.
+            This would solve the issue, but it quickly gets messy, think of you having projects called Project_final and
+            Project_final_final and so on.
           </p>
 
           <p class="text-secondary-700 leading-relaxed mb-6">
-            It also allows us to collaborate and share our code with group members, and other people who would be interested in our code. Because of the version control it also allows us to play around with new features, without having to be afraid of breaking our application, as we can make roll back to earlier commits in the projects, create branches, so we don't break the code that exists on either our development or production branch.
+            It also allows us to collaborate and share our code with group members, and other people who would be
+            interested in our code. Because of the version control it also allows us to play around with new features,
+            without having to be afraid of breaking our application, as we can make roll back to earlier commits in the
+            projects, create branches, so we don't break the code that exists on either our development or production
+            branch.
           </p>
 
           <p class="text-secondary-700 leading-relaxed mb-8 font-medium">
-            The most important Git commands to be able to work with Git on GitHub or any other cloud-based platform for version control and collaboration, using any kind of terminal:
+            The most important Git commands to be able to work with Git on GitHub or any other cloud-based platform for
+            version control and collaboration, using any kind of terminal:
           </p>
 
           <div class="space-y-12">
             <section>
               <h2 class="text-2xl font-semibold mb-4 text-primary-800 flex items-center">
-                <span class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">1</span>
+                <span
+                  class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">1</span>
                 Cloning a repository
               </h2>
-              <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-4 border-l-4 border-primary-500 overflow-x-auto">
+              <pre
+                class="bg-secondary-900 text-white p-5 rounded-lg mb-4 border-l-4 border-primary-500 overflow-x-auto">
 <code class="language-git">git clone &lt;url-to-the-repository-you-would-like-to-work-or-collaborate-on&gt;</code>
               </pre>
             </section>
 
             <section>
               <h2 class="text-2xl font-semibold mb-4 text-primary-800 flex items-center">
-                <span class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">2</span>
+                <span
+                  class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">2</span>
                 Initializing Git
               </h2>
-              <p class="text-secondary-600 mb-3 italic">If your project is not already a Git repository (not needed if you have cloned)</p>
-              <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-4 border-l-4 border-primary-500 overflow-x-auto">
+              <p class="text-secondary-600 mb-3 italic">If your project is not already a Git repository (not needed if
+                you have cloned)</p>
+              <pre
+                class="bg-secondary-900 text-white p-5 rounded-lg mb-4 border-l-4 border-primary-500 overflow-x-auto">
 <code class="language-git">git init</code>
               </pre>
             </section>
 
             <section>
               <h2 class="text-2xl font-semibold mb-4 text-primary-800 flex items-center">
-                <span class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">3</span>
+                <span
+                  class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">3</span>
                 Staging changes
               </h2>
-              <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-4 border-l-4 border-primary-500 overflow-x-auto whitespace-pre">
+              <pre
+                class="bg-secondary-900 text-white p-5 rounded-lg mb-4 border-l-4 border-primary-500 overflow-x-auto whitespace-pre">
 <code class="language-git">git add .
 
 git add -A</code>
@@ -71,13 +90,16 @@ git add -A</code>
                 <div class="flex items-start mb-4">
                   <div class="font-bold text-primary-700">git add .</div>
                   <div class="ml-3 text-secondary-700">
-                    will stage all your new and modified files, but does not stage deletions, in your current directory (i.e., the directory you have <span class="font-mono text-sm bg-primary-100 px-1 rounded">cd</span>'ed into).
+                    will stage all your new and modified files, but does not stage deletions, in your current directory
+                    (i.e., the directory you have <span
+                      class="font-mono text-sm bg-primary-100 px-1 rounded">cd</span>'ed into).
                   </div>
                 </div>
                 <div class="flex items-start">
                   <div class="font-bold text-primary-700">git add -A</div>
                   <div class="ml-3 text-secondary-700">
-                    will stage all the changes you have made to your project, including deletions, no matter which path you are on in your project.
+                    will stage all the changes you have made to your project, including deletions, no matter which path
+                    you are on in your project.
                   </div>
                 </div>
               </div>
@@ -85,22 +107,30 @@ git add -A</code>
 
             <section>
               <h2 class="text-2xl font-semibold mb-4 text-primary-800 flex items-center">
-                <span class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">4</span>
+                <span
+                  class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">4</span>
                 Creating a snapshot of your changes
               </h2>
               <p class="text-secondary-700 leading-relaxed mb-4">
-                With the <span class="font-semibold">git add</span> command, we have actually not saved the changes anywhere—we have just told Git that it is these changes that we would like to continue with. To create a snapshot of your changes, use this command:
+                With the <span class="font-semibold">git add</span> command, we have actually not saved the changes
+                anywhere—we have just told Git that it is these changes that we would like to continue with. To create a
+                snapshot of your changes, use this command:
               </p>
-              <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
+              <pre
+                class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
 <code class="language-git">git commit -m "a good commit message here"</code>
               </pre>
               <div class="bg-secondary-100 p-5 rounded-lg mb-4">
                 <h4 class="font-semibold text-secondary-800 mb-2">Commit Message Best Practices:</h4>
                 <p class="text-secondary-700 leading-relaxed mb-2">
-                  Making good commit messages is really important, but can also be a little tricky. You do not want to write 1500 words here—about everything you changed in great detail (that should be added as documentation if necessary). But also, you don't want to create commit messages that simply say "fixed stuff."
+                  Making good commit messages is really important, but can also be a little tricky. You do not want to
+                  write 1500 words here—about everything you changed in great detail (that should be added as
+                  documentation if necessary). But also, you don't want to create commit messages that simply say "fixed
+                  stuff."
                 </p>
                 <p class="text-secondary-700 leading-relaxed mb-2">
-                  Think about doing it in keywords that briefly describe what you have implemented or changed, in this manner:
+                  Think about doing it in keywords that briefly describe what you have implemented or changed, in this
+                  manner:
                 </p>
                 <p class="font-mono bg-secondary-200 p-2 rounded text-secondary-800 mb-3">
                   [Type], Short description (Optional File or module name)
@@ -109,75 +139,104 @@ git add -A</code>
                   Example: "fix: resolve null pointer in bookingController"
                 </p>
                 <p class="text-secondary-700 leading-relaxed">
-                  It is also important to stage and commit changes each time you make a meaningful change, so a single commit does not contain hundreds of lines of unrelated code. By following this practice, it's easier to find specific changes later without sifting through unnecessary details.
+                  It is also important to stage and commit changes each time you make a meaningful change, so a single
+                  commit does not contain hundreds of lines of unrelated code. By following this practice, it's easier
+                  to find specific changes later without sifting through unnecessary details.
                 </p>
               </div>
             </section>
 
             <section>
               <h2 class="text-2xl font-semibold mb-4 text-primary-800 flex items-center">
-                <span class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">5</span>
+                <span
+                  class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">5</span>
                 Connecting to a GitHub repository
               </h2>
               <p class="text-secondary-700 leading-relaxed mb-4">
-                With the <span class="font-semibold">git add</span> and <span class="font-semibold">git commit</span> commands, we have now saved our changes to our local git history. Next, we'd like to push these changes to a remote repository for an overall better view and to collaborate with others. (This step is not necessary if you used <span class="font-semibold">git clone</span>, as your local repository is already linked.)
+                With the <span class="font-semibold">git add</span> and <span class="font-semibold">git commit</span>
+                commands, we have now saved our changes to our local git history. Next, we'd like to push these changes
+                to a remote repository for an overall better view and to collaborate with others. (This step is not
+                necessary if you used <span class="font-semibold">git clone</span>, as your local repository is already
+                linked.)
               </p>
-              <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-4 border-l-4 border-primary-500 overflow-x-auto">
+              <pre
+                class="bg-secondary-900 text-white p-5 rounded-lg mb-4 border-l-4 border-primary-500 overflow-x-auto">
 <code class="language-git">git remote add origin https://github.com/your-username/your-repository.git</code>
               </pre>
               <p class="text-secondary-700 leading-relaxed mb-2">
                 If you want to check the remote URL—and not just assume it's linked—use:
               </p>
-              <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-4 border-l-4 border-primary-500 overflow-x-auto">
+              <pre
+                class="bg-secondary-900 text-white p-5 rounded-lg mb-4 border-l-4 border-primary-500 overflow-x-auto">
 <code class="language-git">git remote -v</code>
               </pre>
             </section>
 
             <section>
               <h2 class="text-2xl font-semibold mb-4 text-primary-800 flex items-center">
-                <span class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">6</span>
+                <span
+                  class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">6</span>
                 Pushing changes to GitHub
               </h2>
-              <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-4 border-l-4 border-primary-500 overflow-x-auto">
+              <pre
+                class="bg-secondary-900 text-white p-5 rounded-lg mb-4 border-l-4 border-primary-500 overflow-x-auto">
 <code class="language-git">git push -u origin main</code>
               </pre>
               <p class="text-secondary-700 leading-relaxed mb-4">
-                This tells Git to push to your upstream branch called <span class="font-semibold">main</span> and set this as your default upstream branch. You can push to any branch by changing "main" to a different branch name, and of course adhering to your chosen branching strategy. Once you have done this, future pushes can be done with:
+                This tells Git to push to your upstream branch called <span class="font-semibold">main</span> and set
+                this as your default upstream branch. You can push to any branch by changing "main" to a different
+                branch name, and of course adhering to your chosen branching strategy. Once you have done this, future
+                pushes can be done with:
               </p>
-              <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-4 border-l-4 border-primary-500 overflow-x-auto">
+              <pre
+                class="bg-secondary-900 text-white p-5 rounded-lg mb-4 border-l-4 border-primary-500 overflow-x-auto">
 <code class="language-git">git push</code>
               </pre>
             </section>
 
             <section>
               <h2 class="text-2xl font-semibold mb-4 text-primary-800 flex items-center">
-                <span class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">7</span>
+                <span
+                  class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">7</span>
                 Pulling changes from GitHub
               </h2>
-              <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-4 border-l-4 border-primary-500 overflow-x-auto">
+              <pre
+                class="bg-secondary-900 text-white p-5 rounded-lg mb-4 border-l-4 border-primary-500 overflow-x-auto">
 <code class="language-git">git pull</code>
               </pre>
               <p class="text-secondary-700 leading-relaxed mb-4">
-                As Git and GitHub are used for collaboration, the current structure of your project might have been changed by someone else. Before you start working on your own tasks, it's a good idea to first pull the latest changes down locally.
+                As Git and GitHub are used for collaboration, the current structure of your project might have been
+                changed by someone else. Before you start working on your own tasks, it's a good idea to first pull the
+                latest changes down locally.
               </p>
             </section>
           </div>
 
           <div class="mt-12 bg-red-50 border-l-4 border-red-400 p-6 rounded-lg">
             <h2 class="text-2xl font-bold mb-4 text-red-700 flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
               </svg>
               IMPORTANT
             </h2>
             <p class="text-secondary-700 leading-relaxed mb-4">
-              Certain things should <strong>not</strong> be pushed to Git, but just kept locally on your machine. For example, environment variables (often in a <code class="text-sm bg-secondary-200 px-1 rounded">.env</code> file) should never be pushed to it, as they can pose a security risk if leaked (e.g., usernames and passwords to services and databases, API keys). Also, items that are unique to your local environment (like OS-specific files or automatically generated folders such as <code class="text-sm bg-secondary-200 px-1 rounded">node_modules</code>) should be excluded, because these are not useful to others and can bloat repositories.
+              Certain things should <strong>not</strong> be pushed to Git, but just kept locally on your machine. For
+              example, environment variables (often in a <code class="text-sm bg-secondary-200 px-1 rounded">.env</code>
+              file) should never be pushed to it, as they can pose a security risk if leaked (e.g., usernames and
+              passwords to services and databases, API keys). Also, items that are unique to your local environment
+              (like OS-specific files or automatically generated folders such as <code
+                class="text-sm bg-secondary-200 px-1 rounded">node_modules</code>) should be excluded, because these are
+              not useful to others and can bloat repositories.
             </p>
 
             <p class="text-secondary-700 leading-relaxed mb-4">
-              You can achieve this by adding these specific files and folders to your <code class="text-sm bg-secondary-200 px-1 rounded">.gitignore</code> file, which should be placed in your project's root directory. This ensures Git ignores them when staging and committing.
+              You can achieve this by adding these specific files and folders to your <code
+                class="text-sm bg-secondary-200 px-1 rounded">.gitignore</code> file, which should be placed in your
+              project's root directory. This ensures Git ignores them when staging and committing.
             </p>
-            
+
             <div class="bg-white rounded-lg shadow-lg p-4 mt-6 max-w-md mx-auto">
               <div class="text-center font-mono text-sm bg-secondary-100 p-3 rounded-lg border border-secondary-200">
                 # Example .gitignore<br>
@@ -190,16 +249,15 @@ git add -A</code>
               </div>
             </div>
           </div>
-        <div class="mt-8 flex justify-center">
-          <img 
-            src="../assets/images/node_modules_meme.png"
-            alt="Meme about .gitignore not letting git follow the node_modules"
-            class="w-1/2 h-auto rounded shadow-lg"
-          >
+          <div class="mt-8 flex justify-center">
+            <img src="../assets/images/node_modules_meme.png"
+              alt="Meme about .gitignore not letting git follow the node_modules"
+              class="w-1/2 h-auto rounded shadow-lg">
+          </div>
         </div>
-      </div>      
     </main>
   </div>
   <script type="module" src="../assets/js/sidebar.js"></script>
 </body>
+
 </html>

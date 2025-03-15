@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>REST API Documentation</title>
@@ -14,8 +15,9 @@
 
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
 
- 
+
 </head>
+
 <body class="bg-secondary-50 antialiased text-secondary-800">
   <div class="min-h-screen flex">
 
@@ -30,13 +32,18 @@
 
         <div class="prose lg:prose-lg max-w-none">
           <p>
-            A REST API (Representational State Transfer - Application Programming Interface) is a way for systems to communicate over the internet using HTTP methods. I’ve tried to break down the key concepts of REST API’s to three modules:
+            A REST API (Representational State Transfer - Application Programming Interface) is a way for systems to
+            communicate over the internet using HTTP methods. I’ve tried to break down the key concepts of REST API’s to
+            three modules:
           </p>
 
           <ul class="list-disc pl-5 mb-6">
-            <li>Stateless: each request from a client to the server must contain all needed information to process this request.</li>
-            <li>Client-server architecture: The client, in our case a web browser, makes a request to a server. The server processes this request and returns a response.</li>
-            <li>Resource-based: Resources are represented as endpoints (URLS). Each resource can then be manipulated using HTTP-methods.</li>
+            <li>Stateless: each request from a client to the server must contain all needed information to process this
+              request.</li>
+            <li>Client-server architecture: The client, in our case a web browser, makes a request to a server. The
+              server processes this request and returns a response.</li>
+            <li>Resource-based: Resources are represented as endpoints (URLS). Each resource can then be manipulated
+              using HTTP-methods.</li>
           </ul>
 
           <h2 class="text-2xl font-bold mb-4 text-primary-800">HTTP methods in REST-API’s</h2>
@@ -91,15 +98,21 @@
           </p>
 
           <p>
-            Using the right HTTP verb, pretty self explanatory right? If you are creating a new resource use POST, if you are removing a resource use DELETE.
+            Using the right HTTP verb, pretty self explanatory right? If you are creating a new resource use POST, if
+            you are removing a resource use DELETE.
           </p>
 
           <p>
-            Ordering, the order of your REST API should follow the order in Table 1. The reason for this is that it makes your code more maintainable and readable. If I need to check something on my delete method, I know that I just need to scroll to the bottom of my file.
+            Ordering, the order of your REST API should follow the order in Table 1. The reason for this is that it
+            makes your code more maintainable and readable. If I need to check something on my delete method, I know
+            that I just need to scroll to the bottom of my file.
           </p>
 
           <p>
-            Naming that maps to collections in your system, so let's say we are building a movie collection, we have a collection called movies in our system. This should be a noun and in plural, so even if you have a method for just retrieving one movie, the endpoint should still be /movies/{id} . Let’s create a table for this for a better overview:
+            Naming that maps to collections in your system, so let's say we are building a movie collection, we have a
+            collection called movies in our system. This should be a noun and in plural, so even if you have a method
+            for just retrieving one movie, the endpoint should still be /movies/{id} . Let’s create a table for this for
+            a better overview:
           </p>
 
           <div class="overflow-x-auto mb-6">
@@ -151,7 +164,8 @@
           </p>
 
           <p>
-            A CRUDable REST API that allows clients, e.g web browser, Postman or a mobile app to perform these fundamental operations on resources.
+            A CRUDable REST API that allows clients, e.g web browser, Postman or a mobile app to perform these
+            fundamental operations on resources.
           </p>
 
           <h2 class="text-2xl font-bold mb-4 text-primary-800">GET all fingerbones</h2>
@@ -281,11 +295,12 @@ Content-Type: application/json
             Removes the item using the JavaScript method splice()<br>
             Sends a 204 No Content status code, which is considered best practice for DELETE
           </p>
-        </div> 
-      </div> 
+        </div>
+      </div>
     </main>
   </div>
 
   <script type="module" src="../assets/js/sidebar.js"></script>
 </body>
+
 </html>

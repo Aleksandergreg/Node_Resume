@@ -19,7 +19,7 @@ export function constructPage(pageContent, options = {}) {
   let navigationButton = "";
 
   if(options.prevUrl || options.nextUrl) {
-   `
+    navigationButton = `
     <div class="flex justify-between p-4">
       ${options.prevUrl 
         ? `<a href="${options.prevUrl}" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-700">

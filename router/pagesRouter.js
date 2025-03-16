@@ -7,11 +7,11 @@ const router = Router();
 
 const buildPages = [
     { route: '/', file: 'frontpage/frontpage.html', title: 'Frontpage' },
-    { route: '/git', file: 'git/git.html' },
-    { route : '/nodejs', file: 'nodejs/nodejs.html' },
-    { route: '/express', file: 'express/express.html' },
-    { route: '/restapi', file: 'restapi/restapi.html' },
-    { route: '/javascript', file: 'javascript/javascript.html' }
+    { route: '/git', file: 'git/git.html', title: 'Git Documentation' },
+    { route : '/nodejs', file: 'nodejs/nodejs.html', title: 'Node.js Documentation' },
+    { route: '/express', file: 'express/express.html', title: 'Express Documentation' },
+    { route: '/restapi', file: 'restapi/restapi.html', title: 'Rest API Documentation' },
+    { route: '/javascript', file: 'javascript/javascript.html', title: 'JavaScript Documentation' }
 ];
 
 buildPages.forEach((buildPage) => {

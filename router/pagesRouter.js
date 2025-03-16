@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import path from 'path';
 import { readPage, constructPage } from '../util/templatingEngine.js';
+import { getNavigationButton } from '../util/navigationService.js';
+
 
 const router = Router();
 
@@ -26,7 +28,9 @@ buildPages.forEach((buildPage, index) => {
     if (index > 0){
         prevUrl = buildPages[index - 1].route;
     }
-    buildPage.rendered = constructPage(contentPage, { title: buildPage.title, nextUrl: nextUrl, prevUrl: prevUrl });
+
+    const navigation = getNavigationButton({ prevUrl, nextUrl }) 
+    buildPage.rendered = constructPage(contentPage, { title: buildPage.title, navigation });
 });
 
 buildPages.forEach(({ route, rendered }) => {

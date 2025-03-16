@@ -16,19 +16,26 @@ export function constructPage(pageContent, options = {}) {
 
   fullPage += pageContent;
 
-  let nextButton = "";
+  let navigationButton = "";
 
-  if(options.nextUrl) {
-    nextButton = `
-    <div class="flex justify-end p-4">
-          <a href="${options.nextUrl}" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">
+  if(options.prevUrl || options.nextUrl) {
+   `
+    <div class="flex justify-between p-4">
+      ${options.prevUrl 
+        ? `<a href="${options.prevUrl}" class="px-4 py-2 bg-gray-500 text-white rounded hover:bg-gray-700">
+            Previous
+          </a>`
+        : `<div></div>`}
+      ${options.nextUrl 
+        ? `<a href="${options.nextUrl}" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">
             Next
-          </a>
-        </div>
+          </a>`
+        : ``}
+    </div>
     `;
   }
 
-  fullPage += footer.replace("$NEXT_BUTTON$", nextButton);
+  fullPage += footer.replace("$NEXT_BUTTON$", navigationButton);
 
   return fullPage;
 }

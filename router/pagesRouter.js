@@ -6,7 +6,7 @@ const router = Router();
 
 
 const buildPages = [
-    { route: '/', file: 'frontpage/frontpage.html' },
+    { route: '/', file: 'frontpage/frontpage.html', title: 'Frontpage' },
     { route: '/git', file: 'git/git.html' },
     { route : '/nodejs', file: 'nodejs/nodejs.html' },
     { route: '/express', file: 'express/express.html' },
@@ -16,7 +16,7 @@ const buildPages = [
 
 buildPages.forEach((buildPage) => {
     const contentPage = readPage(path.resolve(`./public/pages/${buildPage.file}`));
-    buildPage.rendered = constructPage(contentPage);
+    buildPage.rendered = constructPage(contentPage, { title: buildPage.title });
 });
 
 buildPages.forEach(({ route, rendered }) => {

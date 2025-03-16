@@ -53,6 +53,11 @@
                   class="inline-block w-5 h-5 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">4</span>
                 <a href="#loops" class="text-primary-600 hover:underline">Loops in JavaScript</a>
               </li>
+              <li class="flex items-center">
+                <span
+                  class="inline-block w-5 h-5 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">5</span>
+                <a href="#dates" class="text-primary-600 hover:underline">Dates in JavaScript</a>
+              </li>
             </ul>
           </div>
 
@@ -443,6 +448,139 @@ const sum = numbers.reduce((total, num) => total + num, 0);
               <li>Use reduce when we need to combine the elements of an array into a single value or structure</li>
               <li>Use a for loop only when finger counting</li>
             </ul>
+          </section>
+
+          <!-- NEW SECTION FOR DATES -->
+          <section id="dates" class="space-y-6 mb-12">
+            <h2 class="text-2xl font-semibold mb-4 text-primary-800 flex items-center">
+              <span
+                class="inline-block w-6 h-6 rounded-full bg-primary-100 text-primary-700 text-xs text-center mr-3 flex items-center justify-center font-bold">5</span>
+              Dates in JavaScript
+            </h2>
+
+            <!-- The following content is added verbatim, only with styling and layout, as requested. -->
+
+            <h3 class="text-xl font-semibold mb-4 text-primary-800">Date in JavaScript</h3>
+            <p class="text-secondary-700 leading-relaxed mb-4">
+              The JavaScript Date object allows us as developers to use and manipulate dates and times in our JavaScript applications. There are multiple ways of creating a new instance of Date.
+            </p>
+
+            <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"><code class="language-javascript">
+const currentDate = new Date(); // Gets the current date and time
+console.log(currentDate);
+</code></pre>
+
+            <p class="text-secondary-700 leading-relaxed mb-4">
+              This will give us an output that contains the current date and time in UTC format:
+              YYYY-MM-DDTHH:MM:SSZ (e.g., 2025-03-16T12:00:00Z)
+            </p>
+
+            <p class="text-secondary-700 leading-relaxed mb-4">
+              You can also get the Local date and time for the timezone you are currently in, so in our case Central European Standard time (Cest):
+            </p>
+
+            <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"><code class="language-javascript">
+console.log(Date());
+</code></pre>
+
+            <p class="text-secondary-700 leading-relaxed mb-4">
+              Output:
+              Wed Mar 16 2025 14:30:45 GMT+0100 (Central European Standard Time)
+            </p>
+
+            <p class="text-secondary-700 leading-relaxed mb-4">
+              So this is all good for getting full dates in whatever format fits your purpose. But how can we get specific parts of the date, so we can manipulate these? By using JavaScript’s built-in methods.
+            </p>
+
+            <h3 class="text-xl font-semibold mb-4 text-primary-800">Getting the current month</h3>
+            <p class="text-secondary-700 leading-relaxed mb-4">
+              In JavaScript we have multiple ways to retrieve the month:
+            </p>
+
+            <p class="text-secondary-700 leading-relaxed mb-4 font-semibold">Method 1: Using getMonth()</p>
+            <p class="text-secondary-700 leading-relaxed mb-4">
+              The getMonth() method returns an index number (0 for January, 1 for February and so on)
+              To link this with an actual month name we can use an array of month names.
+            </p>
+
+            <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"><code class="language-javascript">
+const monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+];
+
+app.get("/months", (req, res) => {
+    let currentDate = new Date();
+    let currentMonth = monthNames[currentDate.getMonth()]; 
+
+    res.send({ data: currentMonth });
+    console.log(currentMonth);
+});
+</code></pre>
+
+            <p class="text-secondary-700 leading-relaxed mb-4">
+              Then we will get this response in JSON:
+              { "data": "March" }
+            </p>
+
+            <p class="text-secondary-700 leading-relaxed mb-4 font-semibold">Method 2: Using toLocaleString()</p>
+            <p class="text-secondary-700 leading-relaxed mb-4">
+              The toLocaleString() method can format dates by using a given locale, so by doing this we convert the date into a string, formatted according to a locale, which gives us the date based on regional settings such as language and calendar system.
+            </p>
+
+            <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"><code class="language-javascript">
+app.get("/months/v1", (req, res) => {
+    let currentDate = new Date();
+    let currentMonth = currentDate.toLocaleString("en-US", { month: "short" }); 
+
+    res.send({ data: currentMonth });
+    console.log(currentMonth);
+});
+</code></pre>
+
+            <p class="text-secondary-700 leading-relaxed mb-4">
+              Then we will get this response:
+              { "data": "Mar" }
+            </p>
+
+            <p class="text-secondary-700 leading-relaxed mb-4 font-semibold">Method 3: Splitting the string returned by Date()</p>
+            <p class="text-secondary-700 leading-relaxed mb-4">
+              A third way to retrieve the current month is to split the string that we get returned by Date() and then take the second word in that string, which represents the month, hence our format being: YYYY-MM-DDTHH:MM:SSZ.
+            </p>
+
+            <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"><code class="language-javascript">
+app.get("/months/v3", (req, res) => {
+    const currentMonth = Date().split(" ")[1];
+
+    res.send({ data: currentMonth });
+});
+</code></pre>
+
+            <p class="text-secondary-700 leading-relaxed mb-4">
+              Then we will get this JSON response:
+              { "data": "Mar" }
+            </p>
+
+            <h3 class="text-xl font-semibold mb-4 text-primary-800">Getting the current day of the week</h3>
+            <p class="text-secondary-700 leading-relaxed mb-4">
+              Just like with months, we can retrieve the current day in different ways. It is the exact same approach as used when doing it for the current month, so I’ll just show one example here with using toLocaleString()
+            </p>
+
+            <p class="text-secondary-700 leading-relaxed mb-4 font-semibold">Using toLocaleString()</p>
+            <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"><code class="language-javascript">
+app.get("/days", (req, res) => {
+    let currentDate = new Date();
+    let currentWeekDay = currentDate.toLocaleString("en-US", { weekday: "long"});
+
+    res.send({ data: currentWeekDay});
+});
+</code></pre>
+
+            <p class="text-secondary-700 leading-relaxed mb-4">
+              Then we will get this JSON response:
+              { "data": "Sunday" }
+            </p>
+
           </section>
 
         </div>

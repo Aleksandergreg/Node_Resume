@@ -16,21 +16,25 @@ const buildPages = [
     route: "/nodejs",
     file: "nodejs/nodejs.html",
     title: "Node.js Documentation",
+    favicon: "/assets/images/node.png"
   },
   {
     route: "/express",
     file: "express/express.html",
     title: "Express Documentation",
+    favicon: "/assets/images/express.png"
   },
   {
     route: "/restapi",
     file: "restapi/restapi.html",
     title: "Rest API Documentation",
+    favicon: "/assets/images/restapi.png"
   },
   {
     route: "/javascript",
     file: "javascript/javascript.html",
     title: "JavaScript Documentation",
+    favicon: "/assets/images/javascript.png"
   },
 ];
 

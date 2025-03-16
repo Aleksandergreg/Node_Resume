@@ -13,7 +13,7 @@ export function constructPage(pageContent, options = {}) {
   let fullPage = header
     .replace("$NAV_TITLE$", options.title || "My Site")
     .replace("$CSS_LINKS$", options.cssLinks || "")
-    .replace("$FAVICON$", options.favicon || "/assets/images/node_modules_meme.png");
+    .replace("$FAVICON$", options.favicon || "/assets/images/node.png");
 
   fullPage += pageContent;
 

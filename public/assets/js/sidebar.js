@@ -71,9 +71,14 @@ document.addEventListener('DOMContentLoaded', function() {
                     Loops
                   </a>
                 </li>
-                 <li>
+                <li>
                   <a href="/javascript/#dates" class="block px-6 py-1.5 text-sm hover:bg-primary-50 transition text-secondary-700 hover:text-primary-700">
                     Date
+                  </a>
+                </li>
+                <li>
+                  <a href="/javascript/#fetching" class="block px-6 py-1.5 text-sm hover:bg-primary-50 transition text-secondary-700 hover:text-primary-700">
+                    Fetching
                   </a>
                 </li>
               </ul>

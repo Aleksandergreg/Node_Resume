@@ -8,14 +8,6 @@ export function readPage(filePath) {
 const header = readPage(path.resolve("./public/components/header/header.html"));
 const footer = readPage(path.resolve("./public/components/footer/footer.html"));
 
-/**
- * Wraps the given `pageContent` between a header and footer, 
- * and replaces custom placeholders if needed.
- *
- * @param {string} pageContent - The main body content for the page.
- * @param {object} options - Additional replacements for placeholders.
- * @returns {string}
- */
 
 export function constructPage(pageContent, options = {}) {
   let fullPage = header

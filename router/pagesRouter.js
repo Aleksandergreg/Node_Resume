@@ -14,9 +14,14 @@ const buildPages = [
     { route: '/javascript', file: 'javascript/javascript.html', title: 'JavaScript Documentation' }
 ];
 
-buildPages.forEach((buildPage) => {
+buildPages.forEach((buildPage, index) => {
     const contentPage = readPage(path.resolve(`./public/pages/${buildPage.file}`));
-    buildPage.rendered = constructPage(contentPage, { title: buildPage.title });
+
+    let nextUrl = "";
+    if (index < buildPages.length - 1) {
+        nextUrl = buildPages[index + 1].route;
+    }
+    buildPage.rendered = constructPage(contentPage, { title: buildPage.title, nextUrl: nextUrl });
 });
 
 buildPages.forEach(({ route, rendered }) => {

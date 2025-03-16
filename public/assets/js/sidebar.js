@@ -95,14 +95,16 @@ document.addEventListener('DOMContentLoaded', function() {
       toggleIconOpen.classList.add('hidden');
       toggleIconClosed.classList.remove('hidden');
       sidebarToggle.classList.remove('-right-4');
-      sidebarToggle.classList.add('right-0');
+      sidebarToggle.classList.add('left-3');
+      sidebarToggle.classList.add('pulse-animation');
     } else {
       sidebar.classList.remove('w-0');
       sidebar.classList.add('w-64');
       toggleIconOpen.classList.remove('hidden');
       toggleIconClosed.classList.add('hidden');
       sidebarToggle.classList.add('-right-4');
-      sidebarToggle.classList.remove('right-0');
+      sidebarToggle.classList.remove('left-3');
+      sidebarToggle.classList.remove('pulse-animation');
     }
     sidebarOpen = !sidebarOpen;
   }
@@ -130,6 +132,29 @@ document.addEventListener('DOMContentLoaded', function() {
       width: 0;
       padding: 0;
       overflow: hidden;
+    }
+    .pulse-animation {
+      box-shadow: 0 0 0 rgba(66, 153, 225, 0.5);
+      animation: pulse 1.5s ease-out;
+      animation-iteration-count: 1;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(66, 153, 225, 0.7);
+      }
+      70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(66, 153, 225, 0);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(66, 153, 225, 0);
+      }
+    }
+    #sidebar-toggle:hover {
+      transform: scale(1.1);
+      transition: transform 0.2s ease;
     }
   `;
   document.head.appendChild(style);

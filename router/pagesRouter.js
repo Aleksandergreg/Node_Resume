@@ -18,10 +18,15 @@ buildPages.forEach((buildPage, index) => {
     const contentPage = readPage(path.resolve(`./public/pages/${buildPage.file}`));
 
     let nextUrl = "";
+    let prevUrl = "";
     if (index < buildPages.length - 1) {
         nextUrl = buildPages[index + 1].route;
     }
-    buildPage.rendered = constructPage(contentPage, { title: buildPage.title, nextUrl: nextUrl });
+
+    if (index > 0){
+        prevUrl = buildPages[index - 1].route;
+    }
+    buildPage.rendered = constructPage(contentPage, { title: buildPage.title, nextUrl: nextUrl, prevUrl: prevUrl });
 });
 
 buildPages.forEach(({ route, rendered }) => {

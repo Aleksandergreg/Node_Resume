@@ -12,7 +12,8 @@ const footer = readPage(path.resolve("./public/components/footer/footer.html"));
 export function constructPage(pageContent, options = {}) {
   let fullPage = header
     .replace("$NAV_TITLE$", options.title || "My Site")
-    .replace("$CSS_LINKS$", options.cssLinks || "");
+    .replace("$CSS_LINKS$", options.cssLinks || "")
+    .replace("$FAVICON$", options.favicon || "/assets/images/node_modules_meme.png");
 
   fullPage += pageContent;
 

@@ -7,7 +7,11 @@ const router = Router();
 
 const buildPages = [
   { route: "/", file: "frontpage/frontpage.html", title: "Frontpage" },
-  { route: "/git", file: "git/git.html", title: "Git Documentation" },
+  { 
+    route: "/git", file: "git/git.html",
+    title: "Git Documentation", 
+    favicon: "/assets/images/git.png" 
+  },
   {
     route: "/nodejs",
     file: "nodejs/nodejs.html",
@@ -49,6 +53,7 @@ buildPages.forEach((buildPage, index) => {
   buildPage.rendered = constructPage(contentPage, {
     title: buildPage.title,
     navigation,
+    favicon: buildPage.favicon
   });
 });
 

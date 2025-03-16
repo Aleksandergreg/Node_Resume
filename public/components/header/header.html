@@ -5,12 +5,16 @@
     <meta charset="UTF-8" />
     <title>$NAV_TITLE$</title>
 
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../../assets/js/tailwind-config.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@latest/dist/turbo.es2017-esm.min.js"></script>
+
+
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
 
@@ -20,4 +24,4 @@
 <body class="bg-secondary-50 antialiased text-secondary-800">
     <div class="min-h-screen flex">
 
-        <div id="sidebar-container" class="flex-shrink-0"></div>
+        <div id="sidebar-container" data-turbo-permanent class="flex-shrink-0"></div>

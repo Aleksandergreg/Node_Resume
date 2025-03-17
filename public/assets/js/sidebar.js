@@ -127,6 +127,8 @@ function initializeSidebar() {
     sidebarOpen = !sidebarOpen;
   }
   
+  toggleSidebar();
+  
   jsDropdownToggle.addEventListener('click', function(e) {
     e.preventDefault(); 
     e.stopPropagation();

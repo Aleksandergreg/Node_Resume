@@ -6,9 +6,10 @@ import { getNavigationButton } from "../util/navigationService.js";
 const router = Router();
 
 const buildPages = [
-  { route: "/", file: "frontpage/frontpage.html", title: "Frontpage" },
+  { route: "/", file: "frontpage/frontpage.html", title: "Frontpage", link: "frontpage.css" },
   { 
-    route: "/git", file: "git/git.html",
+    route: "/git", 
+    file: "git/git.html",
     title: "Git Documentation", 
     favicon: "/assets/images/git.png" 
   },
@@ -35,7 +36,7 @@ const buildPages = [
     file: "javascript/javascript.html",
     title: "JavaScript Documentation",
     favicon: "/assets/images/javascript.png"
-  },
+  }
 ];
 
 buildPages.forEach((buildPage, index) => {
@@ -56,6 +57,7 @@ buildPages.forEach((buildPage, index) => {
   const navigation = getNavigationButton({ prevUrl, nextUrl });
   buildPage.rendered = constructPage(contentPage, {
     title: buildPage.title,
+    link: buildPage.link,
     navigation,
     favicon: buildPage.favicon
   });

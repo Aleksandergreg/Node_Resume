@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
+  initializeSidebar();
+});
+
+document.addEventListener('turbo:load', function() {
+  setActiveLink();
+});
+
+function initializeSidebar() {
   const sidebarContainer = document.getElementById('sidebar-container');
   
   sidebarContainer.innerHTML = `
@@ -128,6 +136,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
   sidebarToggle.addEventListener('click', toggleSidebar);
   
+  setActiveLink();
+  
   const style = document.createElement('style');
   style.textContent = `
     .sidebar-wrapper {
@@ -166,6 +176,28 @@ document.addEventListener('DOMContentLoaded', function() {
       transform: scale(1.1);
       transition: transform 0.2s ease;
     }
+    /* Active link styling */
+    #sidebar a.active {
+      text-decoration: underline;
+      font-weight: bold;
+    }
   `;
   document.head.appendChild(style);
-});
+}
+
+function setActiveLink() {
+  const allLinks = document.querySelectorAll('#sidebar a');
+  allLinks.forEach(link => {
+    link.classList.remove('active');
+  });
+  
+  const currentPath = window.location.pathname;
+  allLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPath || 
+        (currentPath.includes('#') && href === currentPath.split('#')[0]) ||
+        (href.includes('#') && currentPath === href.split('#')[0])) {
+      link.classList.add('active');
+    }
+  });
+}

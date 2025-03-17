@@ -158,7 +158,7 @@ function initializeSidebar() {
     .pulse-animation {
       box-shadow: 0 0 0 rgba(66, 153, 225, 0.5);
       animation: pulse 1.5s ease-out;
-      animation-iteration-count: 1;
+      animation-iteration-count: 5;
     }
     @keyframes pulse {
       0% {

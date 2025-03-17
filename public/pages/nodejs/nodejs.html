@@ -1,131 +1,162 @@
 <main class="flex-1 max-w-5xl mx-auto py-12 px-4 md:px-8">
-      <div class="bg-white shadow-custom rounded-lg p-6 md:p-12">
+  <div class="bg-white shadow-custom rounded-lg p-6 md:p-12">
+    <div class="border-b border-secondary-200 pb-6 mb-10">
+      <h1 class="text-3xl font-bold mb-6 text-primary-700">Node.js</h1>
+    </div>
 
-        <div class="border-b border-secondary-200 pb-6 mb-10">
-          <h1 class="text-3xl font-bold mb-6 text-primary-700">Node.js</h1>
+    <div class="bg-gray-50 p-6 rounded-lg shadow-md max-w-4xl mx-auto">
+      <div class="border-b-2 border-blue-500 pb-4 mb-6">
+        <h1 class="text-3xl font-bold text-blue-600">
+          Introduction to Node.js
+        </h1>
+      </div>
+
+      <div class="prose lg:prose-lg max-w-none">
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          <span class="font-semibold">Node.js</span> is a cross-platform runtime
+          environment that runs on the V8 JavaScript engine, same as Google
+          Chrome, but outside of the browser. So where client-side JavaScript is
+          made to only be able to run inside of a browser, with Node.js we can
+          build backend applications including
+          <span class="bg-green-100 text-green-800 px-1 rounded"
+            >REST-APIs</span
+          >
+          and other server-side functionalities that we wouldn't be able to do
+          in client-side JavaScript.
+        </p>
+
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 my-6 rounded-r">
+          <p class="text-blue-800 font-medium">
+            <svg
+              class="w-5 h-5 inline-block mr-2"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9a1 1 0 00-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            Key Concept: Node.js extends JavaScript beyond the browser, enabling
+            full-stack development with a single programming language.
+          </p>
         </div>
 
-        <div class="bg-gray-50 p-6 rounded-lg shadow-md max-w-4xl mx-auto">
-          <div class="border-b-2 border-blue-500 pb-4 mb-6">
-            <h1 class="text-3xl font-bold text-blue-600">Introduction to Node.js</h1>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          An important aspect of Node.js is its
+          <span class="font-semibold"
+            >event-driven, non-blocking I/O architecture</span
+          >, which allows it to handle thousands of simultaneous connections
+          efficiently. This model enables Node.js applications to perform
+          asynchronous tasks—like database queries or network calls—without
+          waiting (blocking) for tasks to finish before starting new ones. As a
+          result, Node.js servers can handle heavy traffic efficiently,
+          improving scalability and performance, without the developer having to
+          manage the thread concurrency, which can be a very large task, and
+          create a lot of bugs.
+        </p>
+
+        <div class="bg-gray-100 rounded mt-6">
+          <div class="bg-gray-200 px-4 py-2 rounded-t font-medium">
+            Installation
           </div>
-
-          <div class="prose lg:prose-lg max-w-none">
-            <p class="text-gray-700 mb-4 leading-relaxed">
-              <span class="font-semibold">Node.js</span> is a cross-platform runtime environment that runs on the V8
-              JavaScript engine, same as Google Chrome, but outside of the browser. So where client-side JavaScript is
-              made to only be able to run inside of a browser, with Node.js we can build backend applications including
-              <span class="bg-green-100 text-green-800 px-1 rounded">REST-APIs</span> and other server-side
-              functionalities that we wouldn't be able to do in client-side JavaScript.
+          <div class="p-4">
+            <p class="text-gray-700">
+              To run a file using Node, first of all you need to have Node
+              installed on your device, which can be done by going to
+              <a
+                href="https://www.nodejs.org"
+                class="text-blue-600 hover:underline"
+                >www.nodejs.org</a
+              >
+              and downloading the install file, or doing it directly from your
+              terminal, using either Homebrew for macOS or Chocolatey for
+              windows.
             </p>
-
-            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 my-6 rounded-r">
-              <p class="text-blue-800 font-medium">
-                <svg class="w-5 h-5 inline-block mr-2" fill="currentColor" viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd"
-                    d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9a1 1 0 00-1-1z"
-                    clip-rule="evenodd"></path>
-                </svg>
-                Key Concept: Node.js extends JavaScript beyond the browser, enabling full-stack development with a
-                single programming language.
-              </p>
-            </div>
-
-            <p class="text-gray-700 mb-4 leading-relaxed">
-              An important aspect of Node.js is its <span class="font-semibold">event-driven, non-blocking I/O
-                architecture</span>, which allows it to handle thousands of simultaneous connections efficiently. This
-              model enables Node.js applications to perform asynchronous tasks—like database queries or network
-              calls—without waiting (blocking) for tasks to finish before starting new ones. As a result, Node.js
-              servers can handle heavy traffic efficiently, improving scalability and performance, without the developer
-              having to manage the thread concurrency, which can be a very large task, and create a lot of bugs.
-            </p>
-
-            <div class="bg-gray-100 rounded mt-6">
-              <div class="bg-gray-200 px-4 py-2 rounded-t font-medium">
-                Installation
-              </div>
-              <div class="p-4">
-                <p class="text-gray-700">
-                  To run a file using Node, first of all you need to have Node installed on your device, which can be
-                  done by going to
-                  <a href="https://www.nodejs.org" class="text-blue-600 hover:underline">www.nodejs.org</a>
-                  and downloading the install file, or doing it directly from your terminal, using either Homebrew for
-                  macOS or Chocolatey for windows.
-                </p>
-              </div>
-            </div>
-
-            <div class="bg-gray-100 rounded mt-4">
-              <div class="bg-gray-200 px-4 py-2 rounded-t font-medium">
-                Verify Installation
-              </div>
-              <div class="p-4 font-mono text-sm">
-                $ node -v<br>
-                $ npm -v
-              </div>
-            </div>
           </div>
+        </div>
 
+        <div class="bg-gray-100 rounded mt-4">
+          <div class="bg-gray-200 px-4 py-2 rounded-t font-medium">
+            Verify Installation
+          </div>
+          <div class="p-4 font-mono text-sm">
+            $ node -v<br />
+            $ npm -v
+          </div>
+        </div>
+      </div>
 
+      <p>
+        If these are installed correctly, now cd into your directory and get the
+        dependencies defined in your package.json installed, ensuring your
+        project has the required packages to run the project. This is done by
+        the command:
+      </p>
 
-
-
-          <p>
-            If these are installed correctly, now cd into your directory and get the dependencies defined in your
-            package.json installed, ensuring your project has the required packages to run the project. This is done by
-            the command:
-          </p>
-
-          <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
+      <pre
+        class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"
+      >
 <code class="language-bash">npm install</code>
           </pre>
 
-          <p>
-            Then after this simply run:
-          </p>
+      <p>Then after this simply run:</p>
 
-          <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
+      <pre
+        class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"
+      >
 <code class="language-bash">node &lt;your-file&gt;.js</code>
           </pre>
 
-          <h2 class="text-2xl font-bold mb-4 text-primary-800">Nodemon</h2>
+      <h2 class="text-2xl font-bold mb-4 text-primary-800">Nodemon</h2>
 
-          <p>
-            In addition to how we can run our Node.js files, let’s talk about Nodemon. Nodemon is a development tool
-            that automatically restarts your Node.js server whenever it detects changes made to your code. If we do it
-            with node app.js we have to manually restart our server every time there is a modification to our code. With
-            Nodemon we would simply run
-          </p>
+      <p>
+        In addition to how we can run our Node.js files, let’s talk about
+        Nodemon. Nodemon is a development tool that automatically restarts your
+        Node.js server whenever it detects changes made to your code. If we do
+        it with node app.js we have to manually restart our server every time
+        there is a modification to our code. With Nodemon we would simply run
+      </p>
 
-          <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
+      <pre
+        class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"
+      >
 <code class="language-bash">nodemon app.js</code>
           </pre>
 
-          <p>
-            So how do we install Nodemon? We will use the Node Package Manager, npm:
-          </p>
+      <p>
+        So how do we install Nodemon? We will use the Node Package Manager, npm:
+      </p>
 
-          <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
+      <pre
+        class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"
+      >
 <code class="language-bash">npm install -g nodemon</code>
           </pre>
 
-          <p>
-            the -g flag means that we are installing Nodemon globally, and it can be used in any Node.js project. If we
-            only want to install nodemon for our specific project locally, so that it’s only used for development and
-            not in production, we can use this command:
-          </p>
+      <p>
+        the -g flag means that we are installing Nodemon globally, and it can be
+        used in any Node.js project. If we only want to install nodemon for our
+        specific project locally, so that it’s only used for development and not
+        in production, we can use this command:
+      </p>
 
-          <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
+      <pre
+        class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"
+      >
 <code class="language-bash">npm install –save-dev nodemon</code>
           </pre>
 
-          <p>
-            In addition to this we can then add two different scripts in our package.json, one for production and one
-            for development, like this:
-          </p>
+      <p>
+        In addition to this we can then add two different scripts in our
+        package.json, one for production and one for development, like this:
+      </p>
 
-          <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
+      <pre
+        class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"
+      >
 <code class="language-json">{
   "scripts": {
     "start": "node app.js",
@@ -134,76 +165,97 @@
 }</code>
           </pre>
 
-          <p>
-            Now we can start our development server with this command:
-          </p>
+      <p>Now we can start our development server with this command:</p>
 
-          <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
+      <pre
+        class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"
+      >
 <code class="language-bash">npm run dev</code>
           </pre>
 
-          <p>
-            Nodemon comes with some limitations, the first and most important is that it is not for production servers,
-            as this can cause severe performance issues. Instead we should use a process manager like PM2.
-          </p>
+      <p>
+        Nodemon comes with some limitations, the first and most important is
+        that it is not for production servers, as this can cause severe
+        performance issues. Instead we should use a process manager like PM2.
+      </p>
 
-          <p>
-            Another limitation is that if you are working on a very large app, restarting every time a file changes can
-            slow down development significantly. You can resolve this by creating a nodemon.json file, where we specify
-            which files Nodemon should watch.
-          </p>
+      <p>
+        Another limitation is that if you are working on a very large app,
+        restarting every time a file changes can slow down development
+        significantly. You can resolve this by creating a nodemon.json file,
+        where we specify which files Nodemon should watch.
+      </p>
 
-          <p>
-            The last limitation I will cover is about Nodemon not restarting when environmental variables change. So if
-            I make a change to any variable inside of .env, Nodemon won’t restart automatically, this can be solved by
-            using the -r flag to reload these like this:
-          </p>
+      <p>
+        The last limitation I will cover is about Nodemon not restarting when
+        environmental variables change. So if I make a change to any variable
+        inside of .env, Nodemon won’t restart automatically, this can be solved
+        by using the -r flag to reload these like this:
+      </p>
 
-          <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
+      <pre
+        class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"
+      >
 <code class="language-bash">nodemon -r dotenv/config server.js</code>
           </pre>
 
-          <h2 class="text-2xl font-bold mb-4 text-primary-800">NPM and package managers</h2>
+      <h2 class="text-2xl font-bold mb-4 text-primary-800">
+        NPM and package managers
+      </h2>
 
-          <p>
-            NPM stands for Node Package Manager, and it is the default package manager for Node.js. It allows us as
-            developers to install and manage dependencies, like external libraries and tools in our JavaScript and
-            Node.js projects. When installing Node.js as described above, NPM is automatically installed with it. So why
-            do we need this? Well before package managers, developers had to manually download and integrate all the
-            JavaScript libraries they needed in their projects. This had a lot of issues with it, as dependencies had to
-            be updated manually, collaborating on projects were difficult as people might have different versions of
-            dependencies. So package managers made managing these things a whole lot easier. So how does NPM work? We
-            can distinguish it into three main components:
-          </p>
+      <p>
+        NPM stands for Node Package Manager, and it is the default package
+        manager for Node.js. It allows us as developers to install and manage
+        dependencies, like external libraries and tools in our JavaScript and
+        Node.js projects. When installing Node.js as described above, NPM is
+        automatically installed with it. So why do we need this? Well before
+        package managers, developers had to manually download and integrate all
+        the JavaScript libraries they needed in their projects. This had a lot
+        of issues with it, as dependencies had to be updated manually,
+        collaborating on projects were difficult as people might have different
+        versions of dependencies. So package managers made managing these things
+        a whole lot easier. So how does NPM work? We can distinguish it into
+        three main components:
+      </p>
 
-          <h3 class="text-xl font-bold mb-2 text-primary-700">NPM registry</h3>
-          <p>
-            A software repository containing thousands of libraries and tools, where you via NPM can install these. If you
-            are familiar with Docker, think of it as DockerHub where you can get the exact dependency that you need for
-            developing your project.
-          </p>
+      <h3 class="text-xl font-bold mb-2 text-primary-700">NPM registry</h3>
+      <p>
+        A software repository containing thousands of libraries and tools, where
+        you via NPM can install these. If you are familiar with Docker, think of
+        it as DockerHub where you can get the exact dependency that you need for
+        developing your project.
+      </p>
 
-          <h3 class="text-xl font-bold mb-2 text-primary-700">Command line interface</h3>
-          <p>
-            The npm command is used within a terminal to interact with the registry. This allows you to install, update
-            and manage dependencies.
-          </p>
+      <h3 class="text-xl font-bold mb-2 text-primary-700">
+        Command line interface
+      </h3>
+      <p>
+        The npm command is used within a terminal to interact with the registry.
+        This allows you to install, update and manage dependencies.
+      </p>
 
-          <h3 class="text-xl font-bold mb-2 text-primary-700">package-json and package-lock.json</h3>
-          <p>
-            These two files keep track of the installed dependencies, their versions and how they are configured. There
-            are various ways of generating these files, it can be done by manually writing it yourself, you can do it by
-            the npm install command, and you can do it with bound expectations to what it should hold, declared by
-            yourself by using npm init. Let’s walk through the various ways.
-          </p>
+      <h3 class="text-xl font-bold mb-2 text-primary-700">
+        package-json and package-lock.json
+      </h3>
+      <p>
+        These two files keep track of the installed dependencies, their versions
+        and how they are configured. There are various ways of generating these
+        files, it can be done by manually writing it yourself, you can do it by
+        the npm install command, and you can do it with bound expectations to
+        what it should hold, declared by yourself by using npm init. Let’s walk
+        through the various ways.
+      </p>
 
-          <h4 class="text-lg font-bold mb-2 text-primary-700">Doing it manually</h4>
-          <p>
-            Inside the root of your project folder, create a package.json. In our case we want to install express so we
-            create a file called package.json and then inside of it write:
-          </p>
+      <h4 class="text-lg font-bold mb-2 text-primary-700">Doing it manually</h4>
+      <p>
+        Inside the root of your project folder, create a package.json. In our
+        case we want to install express so we create a file called package.json
+        and then inside of it write:
+      </p>
 
-          <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
+      <pre
+        class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"
+      >
 <code class="language-json">{
    "dependencies": {
        "express": "4.21.2"
@@ -211,19 +263,25 @@
 }</code>
           </pre>
 
-          <p>
-            Then inside of your terminal run npm install and this will generate all the dependencies needed for the
-            chosen version of express to work.
-          </p>
+      <p>
+        Then inside of your terminal run npm install and this will generate all
+        the dependencies needed for the chosen version of express to work.
+      </p>
 
-          <h4 class="text-lg font-bold mb-2 text-primary-700">Doing it with bound expectations and metadata</h4>
-          <p>
-            You can also generate your package.json by typing npm init. This will ask you for different meta-data about
-            your project. Note that this will not add Express.js as a dependency, you still have to install these
-            manually. After going through all the steps your package.json will look something like this:
-          </p>
+      <h4 class="text-lg font-bold mb-2 text-primary-700">
+        Doing it with bound expectations and metadata
+      </h4>
+      <p>
+        You can also generate your package.json by typing npm init. This will
+        ask you for different meta-data about your project. Note that this will
+        not add Express.js as a dependency, you still have to install these
+        manually. After going through all the steps your package.json will look
+        something like this:
+      </p>
 
-          <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
+      <pre
+        class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"
+      >
 <code class="language-json">{
  "name": "doginder",
  "version": "0.0.1",
@@ -259,59 +317,168 @@
 }</code>
           </pre>
 
-          <p>
-            You then have to run npm install, and it will again generate your package-lock.json where the actual version
-            of all your node_modules will be defined.
+      <p>
+        You then have to run npm install, and it will again generate your
+        package-lock.json where the actual version of all your node_modules will
+        be defined.
+      </p>
+
+      <h4 class="text-lg font-bold mb-2 text-primary-700">
+        Doing it automatically (let NPM handle everything)
+      </h4>
+      <p>
+        Simply just run npm i express, and it will generate both your
+        package.json, package-lock.json and node_modules folder. Note that this
+        way doesn’t add any meta-data like your GitHub repository or keywords.
+      </p>
+
+      <h2 class="text-2xl font-bold mb-4 text-primary-800">
+        Other Package Managers
+      </h2>
+      <p>
+        As stated earlier, NPM is the default package manager for Node, but
+        others also exist, with Yarn as an example. Yarn was created by Meta to
+        improve the speed of downloading packages, as it supports parallel
+        downloads.
+      </p>
+
+      <p>
+        Also, other programming languages use different kinds of package
+        managers. Here is a brief overview:
+      </p>
+
+      <div class="overflow-x-auto mb-6">
+        <table class="min-w-full border border-gray-300">
+          <thead class="bg-gray-200">
+            <tr>
+              <th class="px-4 py-2 border border-gray-300">Language</th>
+              <th class="px-4 py-2 border border-gray-300">Package Manager</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="px-4 py-2 border border-gray-300">Java</td>
+              <td class="px-4 py-2 border border-gray-300">Maven</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border border-gray-300">Python</td>
+              <td class="px-4 py-2 border border-gray-300">pip</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border border-gray-300">Ruby</td>
+              <td class="px-4 py-2 border border-gray-300">RubyGems</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-2 border border-gray-300">C# / .NET</td>
+              <td class="px-4 py-2 border border-gray-300">NuGet</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-12">
+        <div class="prose lg:prose-lg max-w-none">
+          <h2 class="text-3xl font-bold mb-6 text-primary-700">
+            Fetching in the frontend vs fetching in the backend
+          </h2>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            So when it comes to fetching we have two possible ways of doing it,
+            client-side or server-side. Both comes with advantages and
+            disadvantages, so let’s go through them each:
           </p>
-
-          <h4 class="text-lg font-bold mb-2 text-primary-700">Doing it automatically (let NPM handle everything)</h4>
-          <p>
-            Simply just run npm i express, and it will generate both your package.json, package-lock.json and
-            node_modules folder. Note that this way doesn’t add any meta-data like your GitHub repository or keywords.
+          <h3 class="text-2xl font-bold mb-4 text-primary-800">
+            Client-side fetching
+          </h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Where it runs: in your browser
           </p>
-
-          <h2 class="text-2xl font-bold mb-4 text-primary-800">Other Package Managers</h2>
-          <p>
-            As stated earlier, NPM is the default package manager for Node, but others also exist, with Yarn as an
-            example. Yarn was created by Meta to improve the speed of downloading packages, as it supports parallel
-            downloads.
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            When would you use it: <br />
+            When you need an interactive UI with dynamic elements<br />
+            For fetching non-sensitive data and data that updates dynamically
+            (e.g search result, interactive sidebar)
           </p>
-
-          <p>
-            Also, other programming languages use different kinds of package managers. Here is a brief overview:
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Pros: <br />
+            Takes work away from your server<br />
+            Can create a dynamic user experience
           </p>
-
-          <div class="overflow-x-auto mb-6">
-            <table class="min-w-full border border-gray-300">
-              <thead class="bg-gray-200">
-                <tr>
-                  <th class="px-4 py-2 border border-gray-300">Language</th>
-                  <th class="px-4 py-2 border border-gray-300">Package Manager</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td class="px-4 py-2 border border-gray-300">Java</td>
-                  <td class="px-4 py-2 border border-gray-300">Maven</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2 border border-gray-300">Python</td>
-                  <td class="px-4 py-2 border border-gray-300">pip</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2 border border-gray-300">Ruby</td>
-                  <td class="px-4 py-2 border border-gray-300">RubyGems</td>
-                </tr>
-                <tr>
-                  <td class="px-4 py-2 border border-gray-300">C# / .NET</td>
-                  <td class="px-4 py-2 border border-gray-300">NuGet</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Cons:<br />
+            All your API calls are now exposed <br />
+            Can work in different ways in various browsers<br />
+            Can be subject to CORS issues
+          </p>
+          <pre
+            class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"
+          >
+    <code class="language-js">async function fetchData() {
+      try {
+        const response = await fetch('https://api.example.com/data');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log(data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+    
+    fetchData();</code>
+              </pre>
+          <h3 class="text-2xl font-bold mb-4 text-primary-800">
+            Server-side fetching:
+          </h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Where it runs: On your Node.js backend, or your chosen backend
+            programming language
+          </p>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            When to use: <br />
+            When you need to keep API keys or any other credentials secret<br />
+            If you’re fetching from a very large API, and need to use any kind
+            of data processing before sending this data to the client<br />
+            To avoid CORS issues as server-server requests don’t face any kind
+            of restrictions by your browser
+          </p>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Pros: <br />
+            More secure than client-side fetch<br />
+            Possibility to process data before sending it to the client
+          </p>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Cons:<br />
+            Adds additional load to the server<br />
+            If handled poorly in the backend, it might lead to the client being
+            slower, due to it waiting for the server to finish processing
+          </p>
+          <pre
+            class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"
+          >
+    <code class="language-js">import express from 'express';
+    
+    const app = express();
+    
+    app.get('/api/data', async (req, res) => {
+      try {
+        const response = await fetch('https://api.example.com/data');
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        res.send(data);
+      } catch (error) {
+        console.error('Error fetching data on the backend:', error);
+        res.status(500).send({ error: 'Failed to fetch data' });
+      }
+    });
+    
+    app.listen(3000, () => {
+      console.log('Server running on port 3000');
+    });</code>
+              </pre>
         </div>
       </div>
+    </div>
   </div>
-  </main>
- 
+</main>

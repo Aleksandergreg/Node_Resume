@@ -26,7 +26,7 @@ function initializeSidebar() {
           <ul class="space-y-1">
             <li>
               <a href="/" class="block px-3 py-2 rounded hover:bg-primary-50 transition text-secondary-700 hover:text-primary-700">
-                Home
+                Resume
               </a>
             </li>
             <li>

@@ -142,7 +142,7 @@ res.send("Recieved);
       </p>
       
       <pre class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto">
-        <code class="language-javascript">app.use(express.static('public'));</code>
+<code class="language-javascript">app.use(express.static('public'));</code>
       </pre>
       
       <div class="bg-blue-50 p-4 rounded-lg mb-6 border-l-4 border-blue-400">
@@ -160,6 +160,103 @@ res.send("Recieved);
         they could be accessed by anyone. Everything that's not inside of the public folder should be serverfiles,
         like <span class="font-mono text-sm bg-gray-100 px-1">util</span>, <span class="font-mono text-sm bg-gray-100 px-1">app.js</span>, <span class="font-mono text-sm bg-gray-100 px-1">packagelock-json</span>, <span class="font-mono text-sm bg-gray-100 px-1">package.json</span> and <span class="font-mono text-sm bg-gray-100 px-1">.gitignore</span>.
       </p>
+      
+      <h2 class="text-3xl font-bold mb-6 mt-10 text-primary-700">SSR vs CSR</h2>
+      
+      <p class="mb-4 leading-relaxed">
+        When it comes to how our page renders, there are two stables that we always referrer to, <span class="text-primary-600 font-medium">server-side rendering</span> or <span class="text-primary-600 font-medium">client-side rendering</span>. Server-side rendering is when the server renders the full HTML site, including the scripts that are attached, before sending it to the client. Client-side rendering is when this rendering happens on the client, so in the case of html files and JavaScript it will run it using a top-down approach, rendering line for line, excluding things that are run asynchronously. So what are the benefits and disadvantages of using either SSR or CSR? Let's break it down, looking at load time, resources spent, SEO and dealing with cors.
+      </p>
+      
+      <h3 class="text-xl font-bold mt-6 mb-3 text-primary-600">Load time</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+          <h4 class="font-bold mb-2">SSR (Server-side rendering)</h4>
+          <ul class="list-disc ml-4 space-y-2">
+            <li>Initial load time: <span class="text-green-600 font-medium">Faster</span></li>
+            <li>The server pre-renders the HTML and sends the fully rendered HTML file to the browser</li>
+            <li>The user will see this content quickly because the HTML is rendered with all its scripts etc.</li>
+          </ul>
+        </div>
+        
+        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-400">
+          <h4 class="font-bold mb-2">CSR (Client-side rendering)</h4>
+          <ul class="list-disc ml-4 space-y-2">
+            <li>Initial load time: <span class="text-red-600 font-medium">Slower</span></li>
+            <li>The server sends the minimum HTML and a JavaScript bundle</li>
+            <li>The browser must then execute the JavaScript before being able to render the content. Users might see a blank screen while the JavaScript is being processed.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <h3 class="text-xl font-bold mt-6 mb-3 text-primary-600">Resources spent</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+          <h4 class="font-bold mb-2">SSR (Server-side rendering)</h4>
+          <ul class="list-disc ml-4 space-y-2">
+            <li><strong>When:</strong> Rendering happens before the response is sent to the client.</li>
+            <li><strong>Where:</strong> The server is doing all the heavy lifting.</li>
+            <li><strong>Duration:</strong> Longer initial processing on the server but leads to reduced work on the client-side.</li>
+          </ul>
+        </div>
+        
+        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-400">
+          <h4 class="font-bold mb-2">CSR (Client-side rendering)</h4>
+          <ul class="list-disc ml-4 space-y-2">
+            <li><strong>When:</strong> Rendering happens after the client receives the response.</li>
+            <li><strong>Where:</strong> The client's browser is doing most of the working.</li>
+            <li><strong>Duration:</strong> The server can process the request faster, but this workload is being done on the user's device instead.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <h3 class="text-xl font-bold mt-6 mb-3 text-primary-600">SEO (Search engine optimization)</h3>
+      
+      <p class="mb-4 leading-relaxed">
+        In general it can here be said that SSR is the clear winner for SEO optimization. CSR can be worked around to work properly as well, but it requires additional work, like using Next.js, or by using dynamic rendering, where you serve SSR content to the search engines, but CSR content to the user.
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+          <h4 class="font-bold mb-2">SSR (Server-side rendering)</h4>
+          <ul class="list-disc ml-4 space-y-2">
+            <li>Works better for SEO since search engines will receive a fully rendered HTML page.</li>
+            <li>The page renders faster which is also prioritized by search engines.</li>
+          </ul>
+        </div>
+        
+        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-400">
+          <h4 class="font-bold mb-2">CSR (Client-side rendering)</h4>
+          <ul class="list-disc ml-4 space-y-2">
+            <li>The initial HTML response will here be mostly empty, and the search engine has to execute the JavaScript itself</li>
+            <li>Not all search engines can execute JavaScript, and even if they can it will come with a delay, which will cause worse indexing for your page.</li>
+          </ul>
+        </div>
+      </div>
+      
+      <h3 class="text-xl font-bold mt-6 mb-3 text-primary-600">Dealing with CORS</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+          <h4 class="font-bold mb-2">SSR (Server-side rendering)</h4>
+          <ul class="list-disc ml-4 space-y-2">
+            <li><strong>No CORS issues.</strong></li>
+            <li>All API calls are made on the server-side, this results in the browser never having to interact with cross-origin resources.</li>
+            <li>The server will fetch data from a third-party API and send the HTML to the client.</li>
+          </ul>
+        </div>
+        
+        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-400">
+          <h4 class="font-bold mb-2">CSR (Client-side rendering)</h4>
+          <ul class="list-disc ml-4 space-y-2">
+            <li>Can have a lot of CORS issues, because various browsers enforce security policies in different ways, and this can prevent JavaScript from making these requests.</li>
+            <li>We can fix this by adding CORS headers in our fetch</li>
+            <li>Another solution could be to use a proxy, so that we use our backend server to make requests.</li>
+          </ul>
+        </div>
+      </div>
+      
     </div> 
   </div>
 </main>

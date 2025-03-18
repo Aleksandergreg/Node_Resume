@@ -10,9 +10,13 @@ const footer = readPage(path.resolve("./public/components/footer/footer.html"));
 
 
 export function constructPage(pageContent, options = {}) {
+  let stylesheetTag = options.cssLinks
+    ? `<link rel="stylesheet" href="${options.cssLinks}">`
+    : "";
+
   let fullPage = header
     .replace("$NAV_TITLE$", options.title || "My Site")
-    .replace("$CSS_LINKS$", options.cssLinks || "")
+    .replace("$CSS_LINKS$", stylesheetTag)
     .replace("$FAVICON$", options.favicon || "/assets/images/node.png");
 
   fullPage += pageContent;

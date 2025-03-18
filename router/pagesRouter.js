@@ -57,7 +57,7 @@ buildPages.forEach((buildPage, index) => {
   const navigation = getNavigationButton({ prevUrl, nextUrl });
   buildPage.rendered = constructPage(contentPage, {
     title: buildPage.title,
-    link: buildPage.link,
+    cssLinks: buildPage.link,
     navigation,
     favicon: buildPage.favicon
   });

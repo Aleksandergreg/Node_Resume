@@ -6,7 +6,7 @@ import { getNavigationButton } from "../util/navigationService.js";
 const router = Router();
 
 const buildPages = [
-  { route: "/", file: "frontpage/frontpage.html", title: "Frontpage", link: "frontpage.css" },
+  { route: "/", file: "frontpage/frontpage.html", title: "Frontpage", link: "/pages/frontpage/frontpage.css" },
   { 
     route: "/git", 
     file: "git/git.html",

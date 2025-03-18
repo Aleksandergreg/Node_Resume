@@ -479,6 +479,71 @@
               </pre>
         </div>
       </div>
+        <div class="prose lg:prose-lg max-w-none mt-12">
+          <h2 class="text-2xl font-bold mb-4 text-primary-800">
+            Defining environmental variables in Node.js
+          </h2>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            We can define environmental variables, such as API keys or database credentials, natively inside Node.js so we don’t have to have these visible to everyone in plain text. We can accomplish this in a couple of different ways.
+          </p>
+  
+          <h3 class="text-xl font-bold mb-2 text-primary-700">Using CLI</h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            You can set environment variables inline when starting up your Node.js application:
+          </p>
+          <pre
+            class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"
+          >
+  <code class="language-bash">DB_PASSWORD=yourpassword node app.js</code>
+          </pre>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            This can seem like a very redundant way to set the chosen variable, as I will have to do it every time I start my application.
+          </p>
+  
+          <h3 class="text-xl font-bold mb-2 text-primary-700">Setting it in the shell</h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            On Unix-based systems you can export the environment variable in the shell that you are running:
+          </p>
+          <pre
+            class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"
+          >
+  <code class="language-bash">export DB_PASSWORD=yourpassword</code>
+          </pre>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            These variables will then be available every time you run your application from that shell session.
+          </p>
+  
+          <h3 class="text-xl font-bold mb-2 text-primary-700">Using a .env file</h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            In modern Node.js development, there now is native support for using a .env file and loading the environment variable from this file. To do this first create a .env file and define your variables inside this:
+          </p>
+          <pre
+            class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"
+          >
+  <code class="language-bash">DB_PASSWORD=yourpassword
+  API_KEY=yourapikey</code>
+          </pre>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            Now you can run your application using –env-file:
+          </p>
+          <pre
+            class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"
+          >
+  <code class="language-bash">node –envfile=.env app.js</code>
+          </pre>
+  
+          <h3 class="text-xl font-bold mb-2 text-primary-700">
+            Accessing environment variables
+          </h3>
+          <p class="text-gray-700 mb-4 leading-relaxed">
+            With the above command, our variables inside the .env file have now been loaded into process.env. We can then access these variables directly in our code:
+          </p>
+          <pre
+            class="bg-secondary-900 text-white p-5 rounded-lg mb-6 border-l-4 border-primary-500 overflow-x-auto"
+          >
+  <code class="language-js">const dbPassword = process.env.DB_PASSWORD;</code>
+          </pre>
+        </div>
+      </div>
     </div>
-  </div>
-</main>
+  </main>

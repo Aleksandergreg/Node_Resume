@@ -41,7 +41,25 @@
           </p>
         </div>
 
-        <p class="text-gray-700 mb-4 leading-relaxed">
+        <div class="my-6">
+          <input
+            type="checkbox"
+            id="toggle-node-definition"
+            class="hidden peer"
+          />
+      
+        
+          <label
+            for="toggle-node-definition"
+            class="cursor-pointer text-blue-600 font-semibold underline"
+          >
+            Read Node's own definition
+          </label>
+      
+       
+          <p
+            class="text-gray-700 mb-4 leading-relaxed mt-2 hidden peer-checked:block"
+          >
           An important aspect of Node.js is its
           <span class="font-semibold"
             >event-driven, non-blocking I/O architecture</span
@@ -53,7 +71,8 @@
           improving scalability and performance, without the developer having to
           manage the thread concurrency, which can be a very large task, and
           create a lot of bugs.
-        </p>
+          </p>
+        </div>
 
         <div class="bg-gray-100 rounded mt-6">
           <div class="bg-gray-200 px-4 py-2 rounded-t font-medium">

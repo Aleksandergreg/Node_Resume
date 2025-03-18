@@ -1,14 +1,14 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   initializeSidebar();
 });
 
-document.addEventListener('turbo:load', function() {
+document.addEventListener('turbo:load', () => {
   setActiveLink();
 });
 
 function initializeSidebar() {
   const sidebarContainer = document.getElementById('sidebar-container');
-  
+
   sidebarContainer.innerHTML = `
     <div class="sidebar-wrapper relative">
       <button id="sidebar-toggle" class="absolute -right-4 top-6 bg-primary-700 text-white w-8 h-8 rounded-full shadow-lg flex items-center justify-center z-10 hover:bg-primary-800 transition-colors duration-200">
@@ -96,16 +96,16 @@ function initializeSidebar() {
       </nav>
     </div>
   `;
-  
+
   const sidebarToggle = document.getElementById('sidebar-toggle');
   const sidebar = document.getElementById('sidebar');
   const toggleIconOpen = document.getElementById('toggle-icon-open');
   const toggleIconClosed = document.getElementById('toggle-icon-closed');
   const jsDropdownToggle = document.getElementById('js-dropdown-toggle');
   const jsDropdown = document.getElementById('js-dropdown');
-  
+
   let sidebarOpen = true;
-  
+
   function toggleSidebar() {
     if (sidebarOpen) {
       sidebar.classList.remove('w-64');
@@ -126,20 +126,20 @@ function initializeSidebar() {
     }
     sidebarOpen = !sidebarOpen;
   }
-  
+
   toggleSidebar();
-  
-  jsDropdownToggle.addEventListener('click', function(e) {
-    e.preventDefault(); 
+
+  jsDropdownToggle.addEventListener('click', (e) => {
+    e.preventDefault();
     e.stopPropagation();
     jsDropdown.classList.toggle('hidden');
     jsDropdownToggle.querySelector('svg').classList.toggle('rotate-180');
   });
-  
+
   sidebarToggle.addEventListener('click', toggleSidebar);
-  
+
   setActiveLink();
-  
+
   const style = document.createElement('style');
   style.textContent = `
     .sidebar-wrapper {
@@ -189,16 +189,16 @@ function initializeSidebar() {
 
 function setActiveLink() {
   const allLinks = document.querySelectorAll('#sidebar a');
-  allLinks.forEach(link => {
+  allLinks.forEach((link) => {
     link.classList.remove('active');
   });
-  
+
   const currentPath = window.location.pathname;
-  allLinks.forEach(link => {
+  allLinks.forEach((link) => {
     const href = link.getAttribute('href');
-    if (href === currentPath || 
-        (currentPath.includes('#') && href === currentPath.split('#')[0]) ||
-        (href.includes('#') && currentPath === href.split('#')[0])) {
+    if (href === currentPath
+        || (currentPath.includes('#') && href === currentPath.split('#')[0])
+        || (href.includes('#') && currentPath === href.split('#')[0])) {
       link.classList.add('active');
     }
   });

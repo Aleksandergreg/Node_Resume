@@ -5,24 +5,22 @@ export function readPage(filePath) {
   return fs.readFileSync(filePath).toString();
 }
 
-const header = readPage(path.resolve("./public/components/header/header.html"));
-const footer = readPage(path.resolve("./public/components/footer/footer.html"));
-
+const header = readPage(path.resolve('./public/components/header/header.html'));
+const footer = readPage(path.resolve('./public/components/footer/footer.html'));
 
 export function constructPage(pageContent, options = {}) {
-  let stylesheetTag = options.cssLinks
+  const stylesheetTag = options.cssLinks
     ? `<link rel="stylesheet" href="${options.cssLinks}">`
-    : "";
+    : '';
 
   let fullPage = header
-    .replace("$NAV_TITLE$", options.title || "My Site")
-    .replace("$CSS_LINKS$", stylesheetTag)
-    .replace("$FAVICON$", options.favicon || "/assets/images/node.png");
+    .replace('$NAV_TITLE$', options.title || 'My Site')
+    .replace('$CSS_LINKS$', stylesheetTag)
+    .replace('$FAVICON$', options.favicon || '/assets/images/node.png');
 
   fullPage += pageContent;
 
-
-  fullPage += footer.replace("$NAVIGATION$", options.navigation || "");
+  fullPage += footer.replace('$NAVIGATION$', options.navigation || '');
 
   return fullPage;
 }
